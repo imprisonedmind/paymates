@@ -1,14 +1,36 @@
-import {SafeAreaView, View} from 'react-native';
 import OnboardingPage from "./pages/onboarding";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { HomePage, LandingPage } from "./pages/landing";
+import { SettingsPage } from "./pages/settings";
+
+const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
-    <>
-      <SafeAreaView className={`bg-zinc-800 border-b border-zinc-700`}/>
-      <View className={`flex h-max w-full bg-zinc-900`}>
-        <OnboardingPage/>
-      </View>
-    </>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen
+          name="Welcome"
+          component={OnboardingPage}
+          options={{
+            headerStyle: {
+              backgroundColor: "#18181b",
+            },
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="Landing"
+          component={LandingPage}
+          options={{ headerLeft: () => null, headerShown: false }}
+        />
+        <Stack.Screen
+          name="Settings"
+          component={SettingsPage}
+          options={{ headerLeft: () => null }}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
-
