@@ -7,6 +7,7 @@ import {
   View,
 } from "react-native";
 import React from "react";
+import { Ionicons } from "@expo/vector-icons";
 import ScrollView = Animated.ScrollView;
 
 export const HomePage: React.FC<{}> = () => {
@@ -38,6 +39,33 @@ export const HomePage: React.FC<{}> = () => {
         "https://forums.macrumors.com/attachments/67fb2b05-cbec-4a5b-9aa0-146d642f1b4d-png.1774138/",
       recentCategory: "❄️",
       recentTransaction: -800,
+    },
+    {
+      name: "Jade",
+      photoUrl: "https://pbs.twimg.com/media/EE7wKuQU4AAprWP.png",
+      recentCategory: "🎟️",
+      recentTransaction: -145,
+    },
+    {
+      name: "Nish",
+      photoUrl:
+        "https://www.theunbiasedblog.com/wp-content/uploads/2021/07/OutfitSticker2.png",
+      recentCategory: "🥯",
+      recentTransaction: -145,
+    },
+    {
+      name: "Grant",
+      photoUrl:
+        "https://stickerly.pstatic.net/sticker_pack/NitvGoALM0AeBwG7157w/IWWFBB/2/e2de4d67-e669-4370-9ce1-571f82a8b4e5.png",
+      recentCategory: "🌮",
+      recentTransaction: 45,
+    },
+    {
+      name: "Migs",
+      photoUrl:
+        "https://static.wixstatic.com/media/65246d_1b219d158bf547138c67826a252eb11e~mv2.png/v1/fill/w_505,h_505,al_c,lg_1,q_85/65246d_1b219d158bf547138c67826a252eb11e~mv2.png",
+      recentCategory: "🎟️",
+      recentTransaction: 124,
     },
     {
       name: "Jade",
