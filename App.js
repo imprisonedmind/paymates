@@ -9,14 +9,17 @@ const Stack = createNativeStackNavigator();
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator
+        screenOptions={{
+          headerStyle: {
+            backgroundColor: "#18181b",
+          },
+        }}
+      >
         <Stack.Screen
           name="Welcome"
           component={OnboardingPage}
           options={{
-            headerStyle: {
-              backgroundColor: "#18181b",
-            },
             headerShown: false,
           }}
         />

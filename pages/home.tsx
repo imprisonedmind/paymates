@@ -1,16 +1,9 @@
-import {
-  Animated,
-  Image,
-  SafeAreaView,
-  Text,
-  TouchableOpacity,
-  View,
-} from "react-native";
-import React from "react";
-import { Ionicons } from "@expo/vector-icons";
+import { Animated, SafeAreaView, View } from "react-native";
+import React, { FunctionComponent } from "react";
+import { UserCard } from "../components/userCard/userCard";
 import ScrollView = Animated.ScrollView;
 
-export const HomePage: React.FC<{}> = () => {
+export const HomePage: FunctionComponent = () => {
   const arr = [
     {
       name: "Justin",
@@ -47,18 +40,18 @@ export const HomePage: React.FC<{}> = () => {
       recentTransaction: -145,
     },
     {
-      name: "Nish",
-      photoUrl:
-        "https://www.theunbiasedblog.com/wp-content/uploads/2021/07/OutfitSticker2.png",
-      recentCategory: "🥯",
-      recentTransaction: -145,
-    },
-    {
       name: "Grant",
       photoUrl:
         "https://stickerly.pstatic.net/sticker_pack/NitvGoALM0AeBwG7157w/IWWFBB/2/e2de4d67-e669-4370-9ce1-571f82a8b4e5.png",
       recentCategory: "🌮",
       recentTransaction: 45,
+    },
+    {
+      name: "Nish",
+      photoUrl:
+        "https://www.theunbiasedblog.com/wp-content/uploads/2021/07/OutfitSticker2.png",
+      recentCategory: "🥯",
+      recentTransaction: -62,
     },
     {
       name: "Migs",
@@ -67,91 +60,16 @@ export const HomePage: React.FC<{}> = () => {
       recentCategory: "🎟️",
       recentTransaction: 124,
     },
-    {
-      name: "Jade",
-      photoUrl: "https://pbs.twimg.com/media/EE7wKuQU4AAprWP.png",
-      recentCategory: "🎟️",
-      recentTransaction: -145,
-    },
   ];
 
   return (
     <View className={`flex flex-col bg-zinc-950 h-full`}>
       <SafeAreaView />
-      <ScrollView className={`flex flex-col gap-4 p-4 `}>
+      <ScrollView className={`flex-1 flex-col px-2`}>
         {arr.map((user, index) => {
           const isPos = user.recentTransaction > 0;
           return (
-            <TouchableOpacity
-              key={index}
-              className={`
-            bg-zinc-900 p-2 pr-3 rounded-3xl border border-zinc-700
-          `}
-            >
-              <View
-                className={`flex flex-row items-center w-max justify-between`}
-              >
-                <View className={`flex flex-row gap-4 items-center`}>
-                  <View
-                    className={`
-                      flex bg-zinc-950 h-14 w-14 rounded-2xl border border-zinc-700 
-                      overflow-hidden
-                    `}
-                  >
-                    <Image
-                      source={{ uri: user.photoUrl }}
-                      className={`h-full w-full object-cover overflow-hidden `}
-                    />
-                  </View>
-
-                  <View className={`flex flex-col `}>
-                    <Text className={`text-zinc-400 text-lg font-medium`}>
-                      {user.name}
-                    </Text>
-                    <Text className={`text-zinc-400 text-md`}>
-                      {isPos ? `You bought ${user.name}  ` : "Bought You "}
-                      {user.recentCategory}
-                    </Text>
-                  </View>
-                </View>
-                <View
-                  className={`
-                  ${
-                    isPos ? "bg-green-600/20" : "bg-red-600/20"
-                  }  flex flex-row items-center rounded-md
-                  `}
-                >
-                  <View
-                    className={`${
-                      isPos ? "bg-green-700/20" : "bg-red-700/20"
-                    } mr-2 p-1 px-2 rounded-l-md`}
-                  >
-                    <Text
-                      className={`${
-                        isPos ? "text-green-500" : "text-red-500"
-                      } text-md`}
-                    >
-                      R
-                    </Text>
-                  </View>
-                  <Text
-                    className={`
-                    ${
-                      isPos ? "text-green-500" : "text-red-500"
-                    } text-md font-medium tracking-wider pr-2`}
-                  >
-                    {user.recentTransaction}
-                  </Text>
-                </View>
-                {/*<TouchableOpacity>*/}
-                {/*  <MaterialIcons*/}
-                {/*    name="arrow-right"*/}
-                {/*    size={24}*/}
-                {/*    color={"#52525b"}*/}
-                {/*  />*/}
-                {/*</TouchableOpacity>*/}
-              </View>
-            </TouchableOpacity>
+            <UserCard key={index} index={index} user={user} isPos={isPos} />
           );
         })}
       </ScrollView>
