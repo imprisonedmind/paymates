@@ -7,24 +7,35 @@ PayMates is the ultimate mobile app designed to make paying your friends the mon
 [Watch the Recording](https://youtu.be/IFoZMOeLS6k) | [Live Document](https://www.tldraw.com/v/ABQGGPVRmYSMXB78twhyg?viewport=276%2C-85%2C4015%2C1819&page=page%3AFhBe4RY3-tSGP0No49Y83)
 
 ## Roadmap:
-- [X] Update README.
-- [X] Add Bottomsheet Modal
+- [ ] Tailwind Classes Prettier Sorting
+- [ ] Auth
+- [ ] *Auth Screen*
+  - [ ] Header Image
+  - [ ] Google Sign in
+  - [ ] Apple Sign in
+  - [ ] Credtenial Sign in
+  - [ ] Login
+  - [ ] Terms and Conditions
+  - [ ] Privacy Policy
+- [ ] *User List Screen*
+  - [X] User Card
+  - [ ] Onpress Navigate to page
+- [ ] *Single Transaction page*
+  - [ ] Mock Data
+  - [ ] Left vs Right UI
+  - [ ] Expand Single transaction modal
+  - [ ] Top bar 'score'
+- [ ] *Add Bottomsheet Modal*
   - [X] Make this callable from anywhere
   - [X] Allow modular children
-- [ ] Transaction Creation
-  - [ ] User select
+  - [ ] Fix the 'top chip' colour
+- [ ] *Transaction Creation*
+  - [X] User select
   - [ ] Who owes who toggle
   - [ ] Main Icon
   - [ ] Transaction Amount
   - [ ] Multiple Items ??
-- [ ] Add Tailwind Classes Prettier Sorting
-- [ ] Auth Screen
-- [ ] User List Screen
-  - [X] User Card
-  - [ ] Onpress Navigate to page
-- [ ] Transaction Creation Screen
-- [ ] Transaction View
-- [ ] Transaction Array Modal
+
 
 
 ## Contributing
