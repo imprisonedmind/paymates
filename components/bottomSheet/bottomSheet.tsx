@@ -28,7 +28,7 @@ const BottomSheet: FunctionComponent = () => {
     (props) => (
       <BottomSheetBackdrop
         {...props}
-        opacity={0.5}
+        opacity={0.4}
         disappearsOnIndex={-1}
         appearsOnIndex={0}
         pressBehavior="close"
@@ -48,10 +48,10 @@ const BottomSheet: FunctionComponent = () => {
       snapPoints={snapPoints}
       onChange={handleSheetChanges}
       enablePanDownToClose={true}
-      backgroundStyle={{ backgroundColor: "#27272a" }}
+      backgroundStyle={{ backgroundColor: "#18181b" }}
       backdropComponent={renderBackdrop}
     >
-      <View className={`p-4`}>{bottomSheetChildren}</View>
+      <View className={`flex-1 `}>{bottomSheetChildren}</View>
     </BottomSheetModal>
   );
 };

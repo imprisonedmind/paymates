@@ -3,6 +3,8 @@ import { Image, View } from "react-native";
 
 interface OwnProps {
   Uri: string;
+  circle?: boolean;
+  isSelected?: boolean;
 }
 
 type Props = OwnProps;
@@ -11,8 +13,10 @@ export const UserImage: FunctionComponent<Props> = (props) => {
     // TODO: don't use mr-2 here
     <View
       className={` 
-        flex bg-zinc-950 h-14 w-14 rounded-2xl border border-zinc-700 overflow-hidden 
-        relative mr-2
+        ${props.circle ? "rounded-full" : "rounded-2xl"}
+        ${props.isSelected ? "border-blue-600" : "border-zinc-700 "}
+      }
+        flex bg-zinc-950 h-14 w-14 border overflow-hidden relative mr-2
       `}
     >
       <Image

@@ -4,12 +4,13 @@ import { UserCard } from "../components/userCard/userCard";
 import ScrollView = Animated.ScrollView;
 import { arr } from "../data";
 import { useBottomSheetContext } from "../lib/context/bottomSheetContext";
+import { TransActionCreation } from "../components/transActionCreation/transActionCreation";
 
 export const HomePage: React.FunctionComponent = () => {
   const { setBottomSheetChildren } = useBottomSheetContext();
 
   useEffect(() => {
-    setBottomSheetChildren(<Text>Hello World!</Text>);
+    setBottomSheetChildren(<TransActionCreation />);
   }, []);
 
   return (
