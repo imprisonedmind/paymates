@@ -6,11 +6,22 @@ PayMates is the ultimate mobile app designed to make paying your friends the mon
 ![Screenshot 2023-09-18 at 21 59 26](https://github.com/imprisonedmind/paymates/assets/51891628/4cb5f4b9-16ff-4743-a2cc-6f9e0fd4f4b2)
 [Watch the Recording](https://youtu.be/IFoZMOeLS6k) | [Live Document](https://www.tldraw.com/v/ABQGGPVRmYSMXB78twhyg?viewport=276%2C-85%2C4015%2C1819&page=page%3AFhBe4RY3-tSGP0No49Y83)
 
-## TODO:
+## Roadmap:
 - [X] Update README.
+- [X] Add Bottomsheet Modal
+  - [X] Make this callable from anywhere
+  - [X] Allow modular children
+- [ ] Transaction Creation
+  - [ ] User select
+  - [ ] Who owes who toggle
+  - [ ] Main Icon
+  - [ ] Transaction Amount
+  - [ ] Multiple Items ??
 - [ ] Add Tailwind Classes Prettier Sorting
 - [ ] Auth Screen
 - [ ] User List Screen
+  - [X] User Card
+  - [ ] Onpress Navigate to page
 - [ ] Transaction Creation Screen
 - [ ] Transaction View
 - [ ] Transaction Array Modal
