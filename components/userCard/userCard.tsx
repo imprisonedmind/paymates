@@ -24,13 +24,17 @@ export const UserCard: FunctionComponent<Props> = (props) => {
       className={`bg-zinc-900 p-2 pr-3 rounded-3xl border border-zinc-700 mb-4`}
     >
       <View className={`flex flex-row items-center w-max justify-between`}>
-        <View className={`flex flex-row items-center`}>
-          <UserImage Uri={props.user.photoUrl} />
-          <UserDetails
-            name={props.user.name}
-            isPos={props.isPos}
-            recentCategory={props.user.recentCategory}
-          />
+        <View className={`flex flex-row items-center gap-2`}>
+          <View>
+            <UserImage Uri={props.user.photoUrl} />
+          </View>
+          <View>
+            <UserDetails
+              name={props.user.name}
+              isPos={props.isPos}
+              recentCategory={props.user.recentCategory}
+            />
+          </View>
         </View>
         <PriceChip
           isPos={props.isPos}
