@@ -4,10 +4,13 @@ import { SettingsPage } from "./settings";
 import { HomePage } from "./home";
 import { FontAwesome5, Ionicons } from "@expo/vector-icons";
 import { TouchableOpacity, View } from "react-native";
+import { useBottomSheetContext } from "../lib/context/bottomSheetContext";
 
 const Tab = createBottomTabNavigator();
 
 export const LandingPage: React.FC<{}> = () => {
+  const { setIsOpen } = useBottomSheetContext();
+
   return (
     <Tab.Navigator
       initialRouteName={"Home"}
@@ -32,6 +35,7 @@ export const LandingPage: React.FC<{}> = () => {
         options={{
           tabBarIcon: ({ color, size }) => (
             <TouchableOpacity
+              onPress={() => setIsOpen(true)}
               className={`
                 absolute flex bottom-2 rounded-full h-[80px] w-[80px] overflow-hidden 
                 justify-center items-center
