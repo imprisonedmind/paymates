@@ -42,6 +42,7 @@ export const PickYourPaymates: FunctionComponent<Props> = (props) => {
           const isSelected = selectedUserIndices.includes(index);
           return (
             <TouchableOpacity
+              key={index}
               onPress={() => toggleUserSelection(index)}
               className={`flex items-center justify-center`}
             >
