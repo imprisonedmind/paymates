@@ -4,17 +4,22 @@ import React, {
   useEffect,
   useMemo,
   useRef,
+  useState,
 } from "react";
-import { BottomSheetBackdrop, BottomSheetModal } from "@gorhom/bottom-sheet";
+import {
+  BottomSheetBackdrop,
+  BottomSheetModal,
+  BottomSheetView,
+} from "@gorhom/bottom-sheet";
 import { useBottomSheetContext } from "../../lib/context/bottomSheetContext";
-import { Text, View } from "react-native";
 
 const BottomSheet: FunctionComponent = () => {
   const { isOpen, setIsOpen, bottomSheetChildren } = useBottomSheetContext();
 
   const bottomSheetModalRef = useRef<BottomSheetModal>(null);
 
-  const snapPoints = useMemo(() => ["70%"], []);
+  const [height, setHeight] = useState();
+  const snapPoints = useMemo(() => [], []);
 
   const handlePresentModalPress = useCallback(() => {
     bottomSheetModalRef.current?.present();
@@ -37,6 +42,14 @@ const BottomSheet: FunctionComponent = () => {
     [],
   );
 
+  const onViewLayout = (event) => {
+    // Extract the height of the view from the event
+    const { height } = event.nativeEvent.layout;
+
+    // Set the viewHeight state with the measured height
+    setHeight(height);
+  };
+
   useEffect(() => {
     isOpen && handlePresentModalPress();
   }, [isOpen]);
@@ -50,8 +63,14 @@ const BottomSheet: FunctionComponent = () => {
       enablePanDownToClose={true}
       backgroundStyle={{ backgroundColor: "#18181b" }}
       backdropComponent={renderBackdrop}
+      keyboardBlurBehavior={"restore"}
+      keyboardBehavior={"interactive"}
+      enableDynamicSizing={true}
+      contentHeight={height}
     >
-      <View className={`flex-1 `}>{bottomSheetChildren}</View>
+      <BottomSheetView onLayout={onViewLayout}>
+        {bottomSheetChildren}
+      </BottomSheetView>
     </BottomSheetModal>
   );
 };
