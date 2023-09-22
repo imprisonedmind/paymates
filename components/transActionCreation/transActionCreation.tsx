@@ -38,7 +38,9 @@ export const TransActionCreation: FunctionComponent<Props> = (props) => {
               color: "#a1a1aa",
               fontSize: 18,
             }}
-            inputMode={"text"}
+            inputMode={"decimal"}
+            returnKeyType={"done"}
+            returnKeyLabel={"test"}
             placeholder={"Enter an amount"}
             placeholderTextColor={"#27272a"}
             onSubmitEditing={() => {
