@@ -8,6 +8,7 @@ import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { BottomSheetModalProvider } from "@gorhom/bottom-sheet";
 import BottomSheet from "./components/bottomSheet/bottomSheet";
 import { BottomSheetContextProvider } from "./lib/context/bottomSheetContext";
+import { StatusBar } from "react-native";
 
 const Stack = createNativeStackNavigator();
 
@@ -17,6 +18,7 @@ const App = () => {
       <BottomSheetContextProvider>
         <BottomSheetModalProvider>
           <BottomSheet />
+          <StatusBar style="auto" />
           <NavigationContainer>
             <Stack.Navigator
               screenOptions={{
