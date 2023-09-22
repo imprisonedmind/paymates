@@ -10,7 +10,12 @@ function BottomSheetContextProvider({ children }) {
 
   return (
     <BottomSheetContext.Provider
-      value={{ isOpen, setIsOpen, bottomSheetChildren, setBottomSheetChildren }}
+      value={{
+        isOpen,
+        setIsOpen,
+        bottomSheetChildren,
+        setBottomSheetChildren,
+      }}
     >
       {children}
     </BottomSheetContext.Provider>
