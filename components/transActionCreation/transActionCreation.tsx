@@ -15,7 +15,7 @@ export const TransActionCreation: FunctionComponent<Props> = (props) => {
       <View>
         <PickYourPaymates />
       </View>
-      <View>
+      <View className={`pr-4`}>
         <WhoOwesWho />
       </View>
       <View className={`pr-4`}>

@@ -43,6 +43,7 @@ export const PickYourPaymates: FunctionComponent<Props> = (props) => {
           return (
             <TouchableOpacity
               key={index}
+              activeOpacity={0.5}
               onPress={() => toggleUserSelection(index)}
               className={`flex items-center justify-center`}
             >
@@ -51,7 +52,12 @@ export const PickYourPaymates: FunctionComponent<Props> = (props) => {
                 circle={true}
                 isSelected={isSelected}
               />
-              <Text className={`mt-1 text-zinc-500`}>{user.name}</Text>
+              <Text
+                className={`
+                  ${isSelected ? "text-blue-500" : "text-zinc-500"} mt-1 `}
+              >
+                {user.name}
+              </Text>
             </TouchableOpacity>
           );
         })}

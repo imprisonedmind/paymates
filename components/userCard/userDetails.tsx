@@ -11,10 +11,10 @@ type Props = OwnProps;
 
 export const UserDetails: FunctionComponent<Props> = (props) => {
   return (
-    <View className={`flex flex-col `}>
-      <Text className={`text-zinc-400 text-lg font-medium`}>{props.name}</Text>
-      <Text className={`text-zinc-400 text-md`}>
-        {props.isPos ? `You bought ${props.name}  ` : "Bought You "}
+    <View className={`h-full flex flex-col justify-center`}>
+      <Text className={`text-zinc-400 text-lg`}>{props.name}</Text>
+      <Text className={`text-zinc-400 text-md font-light tracking-wide`}>
+        {props.isPos ? `You got them ` : "Got You "}
         {props.recentCategory}
       </Text>
     </View>

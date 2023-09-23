@@ -16,11 +16,13 @@ export const HomePage: React.FunctionComponent = () => {
   return (
     <View className={`flex flex-col bg-zinc-950 h-full`}>
       <SafeAreaView />
-      <ScrollView className={`flex-1 flex-col px-2`}>
+      <ScrollView className={`flex-1 flex-col px-2 gap-4`}>
         {arr.map((user, index) => {
           const isPos = user.recentTransaction > 0;
           return (
-            <UserCard key={index} index={index} user={user} isPos={isPos} />
+            <View className={`flex h-fit`}>
+              <UserCard key={index} index={index} user={user} isPos={isPos} />
+            </View>
           );
         })}
       </ScrollView>
