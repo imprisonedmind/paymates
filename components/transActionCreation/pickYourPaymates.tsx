@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useState } from "react";
+import React, { FunctionComponent } from "react";
 import { ScrollView, Text, TouchableOpacity, View } from "react-native";
 import { UserImage } from "../userCard/userImage";
 import { AreaTitle } from "./areaTitle";
@@ -49,7 +49,7 @@ export const PickYourPaymates: FunctionComponent<Props> = (props) => {
               key={index}
               activeOpacity={0.5}
               onPress={() => toggleUserSelection(index)}
-              className={`flex items-center justify-center mr-3`}
+              className={`mr-3 flex items-center justify-center`}
             >
               <UserImage
                 Uri={user.photoUrl}
