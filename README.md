@@ -19,6 +19,7 @@ PayMates is the ultimate mobile app designed to make paying your friends the mon
   - [ ] Privacy Policy
 - [ ] *User List Screen*
   - [X] User Card
+  - [ ] Time ago 
   - [ ] Onpress Navigate to page
 - [ ] *Single Transaction page*
   - [ ] Mock Data
@@ -28,12 +29,14 @@ PayMates is the ultimate mobile app designed to make paying your friends the mon
 - [ ] *Add Bottomsheet Modal*
   - [X] Make this callable from anywhere
   - [X] Allow modular children
-  - [ ] Fix the 'top chip' colour
+  - [X] Fix the 'top chip' colour
 - [ ] *Transaction Creation*
   - [X] User select
-  - [ ] Who owes who toggle
-  - [ ] Main Icon
-  - [ ] Transaction Amount
+  - [X] Who owes who toggle
+  - [X] Main Icon
+  - [X] What did you get them
+  - [X] Transaction Amount
+  - [X] Disable submit button until all fields
   - [ ] Multiple Items ??
 
 
