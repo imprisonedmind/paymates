@@ -9,6 +9,7 @@ import { BottomSheetModalProvider } from "@gorhom/bottom-sheet";
 import BottomSheet from "./components/bottomSheet/bottomSheet";
 import { BottomSheetContextProvider } from "./lib/context/bottomSheetContext";
 import { StatusBar } from "react-native";
+import { UserToUserHistory } from "./pages/userToUserHistory";
 
 const Stack = createNativeStackNavigator();
 
@@ -37,7 +38,18 @@ const App = () => {
               <Stack.Screen
                 name="Landing"
                 component={LandingPage}
-                options={{ headerLeft: () => null, headerShown: false }}
+                options={{
+                  headerLeft: () => null,
+                  headerShown: false,
+                }}
+              />
+              <Stack.Screen
+                name="U2U"
+                component={UserToUserHistory}
+                options={{
+                  headerShown: true,
+                  headerTintColor: "#2563eb",
+                }}
               />
               <Stack.Screen
                 name="Settings"

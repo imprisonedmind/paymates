@@ -4,6 +4,7 @@ import { UserImage } from "./userImage";
 import { UserDetails } from "./userDetails";
 import { PriceChip } from "./priceChip";
 import { timeAgo } from "../../lib/utilities";
+import { TransActionTimeAgo } from "./transActionTimeAgo";
 
 interface OwnProps {
   index: number;
@@ -18,6 +19,7 @@ interface OwnProps {
     timeAgo: number;
   };
   isPos: boolean;
+  navigate: () => void;
 }
 
 type Props = OwnProps;
@@ -27,6 +29,7 @@ export const UserCard: FunctionComponent<Props> = (props) => {
     <TouchableOpacity
       key={props.index}
       activeOpacity={0.8}
+      onPress={props.navigate}
       className={`
         flex h-fit w-full rounded-3xl border border-zinc-800 bg-zinc-900 p-2 pr-3
       `}
@@ -59,11 +62,9 @@ export const UserCard: FunctionComponent<Props> = (props) => {
               recentTransaction={props.transAction.amount[0]}
             />
           </View>
-          <Text
-            className={`flex text-xs font-light tracking-wider text-zinc-400`}
-          >
-            {timeAgo(props.transAction.timeAgo)}
-          </Text>
+          <View>
+            <TransActionTimeAgo timeAgo={props.transAction.timeAgo} />
+          </View>
         </View>
       </View>
     </TouchableOpacity>

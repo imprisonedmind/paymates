@@ -52,7 +52,7 @@ export const WhatWasIt: FunctionComponent<Props> = (props) => {
           placeholderTextColor={"#27272a"}
           onChangeText={(v) => handleChange(v)}
           onSubmitEditing={() => {
-            console.log("test");
+            console.log("onsubmit");
           }}
         />
       </View>
