@@ -34,12 +34,22 @@ export const UserToUserHistory: FunctionComponent<Props> = (props) => {
       transactions.to.includes(userID) || transactions.from.includes(userID),
   );
 
+  let total = 0;
+
+  for (const transAction of transActionHistory) {
+    if (transAction.hasOwnProperty("amount")) {
+      total += transAction.amount[0];
+    }
+  }
+
   useEffect(() => {
     navigation.setOptions({
       headerTitle: () => (
-        <View className={`bg-red-500`}>
-          <Text>{title}</Text>
-        </View>
+        <PriceChip
+          isPos={total > 0}
+          title={"Total"}
+          recentTransaction={total}
+        />
       ),
       // headerBackTitle: backTitle,
       headerRight: () => <HeaderUserImage UID={userID} />,
@@ -48,7 +58,7 @@ export const UserToUserHistory: FunctionComponent<Props> = (props) => {
 
   return (
     // TODO: AGAIN! very strange flex behaviour here, cannot use gap!!
-    <ScrollView className={`scroll-pb-64 bg-zinc-950 px-2 pt-4`}>
+    <ScrollView className={`scroll-pb-64 bg-zinc-950 px-2 pt-2`}>
       {transActionHistory.map((transAction) => {
         const isPos = transAction.amount[0] > 0;
         const user = friendData.find(

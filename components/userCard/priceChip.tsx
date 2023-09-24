@@ -3,6 +3,7 @@ import { Text, View } from "react-native";
 
 interface OwnProps {
   isPos: boolean;
+  title?: string;
   recentTransaction: number;
 }
 
@@ -28,7 +29,7 @@ export const PriceChip: FunctionComponent<Props> = (props) => {
             text-md
           `}
         >
-          R
+          {props.title || "R"}
         </Text>
       </View>
       <Text
