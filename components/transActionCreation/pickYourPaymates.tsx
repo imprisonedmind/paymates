@@ -1,28 +1,29 @@
 import React, { FunctionComponent, useState } from "react";
 import { ScrollView, Text, TouchableOpacity, View } from "react-native";
-import { arr } from "../../data";
 import { UserImage } from "../userCard/userImage";
 import { AreaTitle } from "./areaTitle";
+import { arr } from "../../lib/data";
 
-interface OwnProps {}
+interface OwnProps {
+  selectedUserIndices: number[];
+  setSelectedUserIndices: (v) => void;
+}
 
 type Props = OwnProps;
 
 export const PickYourPaymates: FunctionComponent<Props> = (props) => {
-  const [selectedUserIndices, setSelectedUserIndices] = useState<number[]>([]);
-
   const toggleUserSelection = (index: number) => {
     // Check if the index is already in the selectedUserIndices array
-    const isSelected = selectedUserIndices.includes(index);
+    const isSelected = props.selectedUserIndices.includes(index);
 
     if (isSelected) {
       // If the user is already selected, remove them from the array
-      setSelectedUserIndices((prevSelectedUserIndices) =>
+      props.setSelectedUserIndices((prevSelectedUserIndices) =>
         prevSelectedUserIndices.filter((i) => i !== index),
       );
     } else {
       // If the user is not selected, add them to the array
-      setSelectedUserIndices((prevSelectedUserIndices) => [
+      props.setSelectedUserIndices((prevSelectedUserIndices) => [
         ...prevSelectedUserIndices,
         index,
       ]);
@@ -30,22 +31,25 @@ export const PickYourPaymates: FunctionComponent<Props> = (props) => {
   };
 
   return (
-    <View className={`flex flex-col`}>
-      <AreaTitle title={"Pick your Paymate(s)"} />
+    <View className={`flex flex-col gap-2`}>
+      <View className={`pl-4`}>
+        <AreaTitle title={"Pick your Paymate(s)"} />
+      </View>
 
       <ScrollView
         horizontal={true}
         showsHorizontalScrollIndicator={false}
-        className={`flex flex-row gap-2`}
+        className={`flex flex-row pl-4`}
       >
         {arr.map((user, index) => {
-          const isSelected = selectedUserIndices.includes(index);
+          const isSelected = props.selectedUserIndices.includes(index);
           return (
+            // TODO: I don't like using mr here!! **standard gap issue**
             <TouchableOpacity
               key={index}
               activeOpacity={0.5}
               onPress={() => toggleUserSelection(index)}
-              className={`flex items-center justify-center`}
+              className={`flex items-center justify-center mr-3`}
             >
               <UserImage
                 Uri={user.photoUrl}

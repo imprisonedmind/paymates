@@ -19,7 +19,7 @@ export const LongRectangularButton: React.FC<LongRectangularButton> = ({
       onPress={callBackFn}
       className={`
 				${buttonColour ?? "bg-zinc-800 border-zinc-700"}
-				flex w-fit p-4 rounded-2xl mt-4 border
+				flex w-fit p-4 rounded-2xl border
 			`}
     >
       {/*<FontAwesomeIcon name={icon} size={30}/>*/}

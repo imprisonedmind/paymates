@@ -1,50 +1,36 @@
 import React, { FunctionComponent } from "react";
 import { AreaTitle } from "./areaTitle";
 import { Text, View } from "react-native";
-import { BottomSheetTextInput } from "@gorhom/bottom-sheet";
+import { MoneyInputBox } from "./moneyInputBox";
 
 interface OwnProps {
   oweThem: boolean;
+  selectedUserIndices: number[];
 }
 
 type Props = OwnProps;
 
 export const HowMuch: FunctionComponent<Props> = (props) => {
   return (
-    <>
-      <AreaTitle
-        title={`How much do ${props.oweThem ? "you" : "they"} owe ${
-          props.oweThem ? "them" : "you"
-        }? `}
-      />
-      <View
-        className={`flex rounded-md overflow-hidden border border-zinc-800`}
-      >
-        <View
-          className={`
-              absolute top-0 h-full w-10 bg-zinc-800 z-50 flex items-center justify-center
-          `}
-        >
-          <Text className={`text-lg font-medium`}>R</Text>
-        </View>
-        <BottomSheetTextInput
-          style={{
-            backgroundColor: "#09090b",
-            padding: 12,
-            paddingLeft: 50,
-            color: "#a1a1aa",
-            fontSize: 18,
-          }}
-          inputMode={"decimal"}
-          returnKeyType={"done"}
-          returnKeyLabel={"test"}
-          placeholder={"Enter an amount"}
-          placeholderTextColor={"#27272a"}
-          onSubmitEditing={() => {
-            console.log("test");
-          }}
+    <View className={`flex flex-col gap-2`}>
+      <View>
+        <AreaTitle
+          title={`How much do ${props.oweThem ? "you" : "they"} owe ${
+            props.oweThem ? "them" : "you"
+          }? `}
         />
       </View>
-    </>
+      <View>
+        <MoneyInputBox />
+      </View>
+      {props.selectedUserIndices.length > 1 && (
+        <View className={`bg-orange-500/10 p-2 rounded-md`}>
+          <Text className={`text-xs text-orange-500 font-light tracking-wide`}>
+            Multiple users have been selected, the amount will be split equally
+            between them.
+          </Text>
+        </View>
+      )}
+    </View>
   );
 };

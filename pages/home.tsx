@@ -2,9 +2,9 @@ import { Animated, SafeAreaView, Text, View } from "react-native";
 import React, { useEffect } from "react";
 import { UserCard } from "../components/userCard/userCard";
 import ScrollView = Animated.ScrollView;
-import { arr } from "../data";
 import { useBottomSheetContext } from "../lib/context/bottomSheetContext";
 import { TransActionCreation } from "../components/transActionCreation/transActionCreation";
+import { arr } from "../lib/data";
 
 export const HomePage: React.FunctionComponent = () => {
   const { setBottomSheetChildren } = useBottomSheetContext();
