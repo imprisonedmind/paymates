@@ -43,6 +43,7 @@ export const PickYourPaymates: FunctionComponent<Props> = (props) => {
       >
         {friendData.map((user, index) => {
           const isSelected = props.selectedUserIndices.includes(index);
+          if (user.uid === "288fb0b8-5b07-11ee-8c99-0242ac120002") return;
           return (
             // TODO: I don't like using mr here!! **standard gap issue**
             <TouchableOpacity

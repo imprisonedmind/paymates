@@ -48,7 +48,7 @@ export const UserToUserHistory: FunctionComponent<Props> = (props) => {
 
   return (
     // TODO: AGAIN! very strange flex behaviour here, cannot use gap!!
-    <ScrollView className={`bg-zinc-950 px-2`}>
+    <ScrollView className={`scroll-pb-64 bg-zinc-950 px-2 pt-4`}>
       {transActionHistory.map((transAction) => {
         const isPos = transAction.amount[0] > 0;
         const user = friendData.find(
@@ -57,9 +57,8 @@ export const UserToUserHistory: FunctionComponent<Props> = (props) => {
 
         return (
           <View
-            className={`flex flex-row pt-4 ${
-              isPos && "ml-auto flex-row-reverse"
-            }`}
+            key={transAction.uid}
+            className={`flex flex-row ${isPos && "ml-auto flex-row-reverse"}`}
           >
             <View className={isPos ? "ml-2" : "mr-2"}>
               <UserImage
@@ -77,7 +76,7 @@ export const UserToUserHistory: FunctionComponent<Props> = (props) => {
                   ? "rounded-2xl rounded-tr-none"
                   : "rounded-2xl rounded-tl-none"
               }
-              mt-4 flex h-fit w-4/6 justify-between border border-zinc-800 bg-zinc-900 p-2
+               mt-3.5 flex h-fit w-4/6 justify-between border border-zinc-800 bg-zinc-900 p-2
             `}
             >
               <View
