@@ -28,11 +28,11 @@ export const WhatWasIt: FunctionComponent<Props> = (props) => {
         />
       </View>
       <View
-        className={`flex rounded-md overflow-hidden border border-zinc-800`}
+        className={`flex overflow-hidden rounded-md border border-zinc-800`}
       >
         <View
           className={` 
-            absolute top-0 h-full w-10 bg-zinc-800 z-50 flex items-center justify-center
+            absolute top-0 z-50 flex h-full w-10 items-center justify-center bg-zinc-800
           `}
         >
           <Text className={`text-lg font-medium`}>{icon}</Text>

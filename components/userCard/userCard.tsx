@@ -23,15 +23,15 @@ export const UserCard: FunctionComponent<Props> = (props) => {
       key={props.index}
       activeOpacity={0.8}
       className={`
-        flex bg-zinc-900 p-2 pr-3 rounded-3xl border border-zinc-800 h-fit w-full
+        flex h-fit w-full rounded-3xl border border-zinc-800 bg-zinc-900 p-2 pr-3
       `}
     >
       <View
         className={`
-          flex flex-row items-center justify-between h-14 
+          flex h-14 flex-row items-center justify-between 
         `}
       >
-        <View className={`flex flex-row items-center gap-2 h-full`}>
+        <View className={`flex h-full flex-row items-center gap-2`}>
           <View>
             <UserImage Uri={props.user.photoUrl} />
           </View>
@@ -45,7 +45,7 @@ export const UserCard: FunctionComponent<Props> = (props) => {
         </View>
         <View
           className={`
-          flex flex-col h-full justify-center items-end gap-2
+          flex h-full flex-col items-end justify-center gap-2
         `}
         >
           <View>
@@ -55,7 +55,7 @@ export const UserCard: FunctionComponent<Props> = (props) => {
             />
           </View>
           <Text
-            className={`flex text-zinc-400 text-xs font-light tracking-wider`}
+            className={`flex text-xs font-light tracking-wider text-zinc-400`}
           >
             {"4:12PM"}
           </Text>

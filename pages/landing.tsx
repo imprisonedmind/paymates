@@ -37,17 +37,17 @@ export const LandingPage: React.FC<{}> = () => {
             <TouchableOpacity
               onPress={() => setIsOpen(true)}
               className={`
-                absolute flex bottom-2 rounded-full h-[80px] w-[80px] overflow-hidden 
-                justify-center items-center
+                absolute bottom-2 flex h-[80px] w-[80px] items-center justify-center 
+                overflow-hidden rounded-full
               `}
             >
               <View
-                className={`absolute flex bg-zinc-950 h-10 w-20 bottom-0 scale-105`}
+                className={`absolute bottom-0 flex h-10 w-20 scale-105 bg-zinc-950`}
               />
               <View
                 className={`
-                  flex items-center h-[70px] w-[70px] justify-center bg-blue-600 
-                  rounded-full
+                  flex h-[70px] w-[70px] items-center justify-center rounded-full 
+                  bg-blue-600
                 `}
               >
                 <Ionicons

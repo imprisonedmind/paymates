@@ -15,7 +15,7 @@ export const TransActionCreation: FunctionComponent<Props> = (props) => {
   const [oweThem, setOweThem] = useState(false);
 
   return (
-    <View className={`flex flex-col gap-4 pt-4 pb-8`}>
+    <View className={`flex flex-col gap-4 pb-8 pt-4`}>
       <View>
         <PickYourPaymates
           selectedUserIndices={selectedUserIndices}
@@ -28,7 +28,7 @@ export const TransActionCreation: FunctionComponent<Props> = (props) => {
       <View className={`px-4`}>
         <WhatWasIt oweThem={oweThem} />
       </View>
-      <View className={`px-4 mb-4`}>
+      <View className={`mb-4 px-4`}>
         <HowMuch oweThem={oweThem} selectedUserIndices={selectedUserIndices} />
       </View>
       <View className={`px-4`}>

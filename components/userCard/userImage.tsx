@@ -15,12 +15,12 @@ export const UserImage: FunctionComponent<Props> = (props) => {
         ${props.circle ? "rounded-full" : "rounded-2xl"}
         ${props.isSelected ? "border-blue-600" : "border-zinc-800 "}
       }
-        flex bg-zinc-950 h-14 w-14 border overflow-hidden relative
+        relative flex h-14 w-14 overflow-hidden border bg-zinc-950
       `}
     >
       <Image
         source={{ uri: props.Uri }}
-        className={`h-full w-full object-cover overflow-hidden `}
+        className={`h-full w-full overflow-hidden object-cover `}
       />
     </View>
   );
