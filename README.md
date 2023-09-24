@@ -7,7 +7,7 @@ PayMates is the ultimate mobile app designed to make paying your friends the mon
 [Watch the Recording](https://youtu.be/IFoZMOeLS6k) | [Live Document](https://www.tldraw.com/v/ABQGGPVRmYSMXB78twhyg?viewport=276%2C-85%2C4015%2C1819&page=page%3AFhBe4RY3-tSGP0No49Y83)
 
 ## Roadmap:
-- [ ] Tailwind Classes Prettier Sorting
+- [X] Tailwind Classes Prettier Sorting
 - [ ] Auth
 - [ ] *Auth Screen*
   - [ ] Header Image
