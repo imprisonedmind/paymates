@@ -33,7 +33,7 @@ export const PickYourPaymates: FunctionComponent<Props> = (props) => {
   return (
     <View className={`flex flex-col gap-2`}>
       <View className={`pl-4`}>
-        <AreaTitle title={"Pick your Paymate(s)"} />
+        <AreaTitle title={"Pick your Paymates"} />
       </View>
 
       <ScrollView
