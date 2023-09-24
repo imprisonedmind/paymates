@@ -67,6 +67,7 @@ const BottomSheet: FunctionComponent = () => {
       keyboardBehavior={"interactive"}
       enableDynamicSizing={true}
       contentHeight={height}
+      handleIndicatorStyle={{ backgroundColor: "#27272a" }}
     >
       <BottomSheetView onLayout={onViewLayout}>
         {bottomSheetChildren}

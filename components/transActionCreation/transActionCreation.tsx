@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from "react";
+import React, { FunctionComponent, useState } from "react";
 import { Text, View } from "react-native";
 import { PickYourPaymates } from "./pickYourPaymates";
 import { WhoOwesWho } from "./whoOwesWho";
@@ -10,16 +10,22 @@ interface OwnProps {}
 type Props = OwnProps;
 
 export const TransActionCreation: FunctionComponent<Props> = (props) => {
+  const [oweThem, setOweThem] = useState(false);
+
   return (
     <View className={`flex flex-col p-4 pr-0 gap-8 pb-8`}>
       <View>
         <PickYourPaymates />
       </View>
       <View className={`pr-4`}>
-        <WhoOwesWho />
+        <WhoOwesWho oweThem={oweThem} setOweThem={setOweThem} />
       </View>
       <View className={`pr-4`}>
-        <AreaTitle title={"How much do they owe you? 🤑"} />
+        <AreaTitle
+          title={`How much do ${oweThem ? "you" : "they"} owe ${
+            oweThem ? "them" : "you"
+          }? `}
+        />
         <View
           className={`flex rounded-md overflow-hidden border border-zinc-800`}
         >

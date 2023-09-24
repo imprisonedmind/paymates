@@ -31,7 +31,7 @@ export const PickYourPaymates: FunctionComponent<Props> = (props) => {
 
   return (
     <View className={`flex flex-col`}>
-      <AreaTitle title={"Pick your Paymate(s) 🤝"} />
+      <AreaTitle title={"Pick your Paymate(s)"} />
 
       <ScrollView
         horizontal={true}
