@@ -20,11 +20,7 @@ type UserToUserHistoryRouteProp = RouteProp<
   "U2U"
 >;
 
-interface OwnProps {}
-
-type Props = OwnProps;
-
-export const UserToUserHistory: FunctionComponent<Props> = (props) => {
+export const UserToUserHistory: FunctionComponent = () => {
   const navigation = useNavigation();
   const route = useRoute<UserToUserHistoryRouteProp>();
   const { title, backTitle, userID } = route.params;
@@ -51,7 +47,7 @@ export const UserToUserHistory: FunctionComponent<Props> = (props) => {
           recentTransaction={total}
         />
       ),
-      // headerBackTitle: backTitle,
+      headerBackTitle: backTitle,
       headerRight: () => <HeaderUserImage UID={userID} />,
     });
   }, []);

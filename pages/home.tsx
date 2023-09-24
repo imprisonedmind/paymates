@@ -48,7 +48,7 @@ export const HomePage: React.FunctionComponent = () => {
                 navigate={() => {
                   navigation.navigate("U2U", {
                     title: "test this",
-                    backTitle: "back",
+                    backTitle: "Home",
                     userID: user.uid,
                   });
                 }}
