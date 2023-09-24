@@ -3,6 +3,7 @@ import { Text, View } from "react-native";
 
 interface OwnProps {
   isPos: boolean;
+  title?: string;
   recentTransaction: number;
 }
 
@@ -19,7 +20,7 @@ export const PriceChip: FunctionComponent<Props> = (props) => {
       <View
         className={`
           ${props.isPos ? "bg-green-700/20" : "bg-red-700/20"} 
-          mr-2 p-1 px-2 rounded-l-md
+          mr-2 rounded-l-md p-1 px-2
       `}
       >
         <Text
@@ -28,13 +29,13 @@ export const PriceChip: FunctionComponent<Props> = (props) => {
             text-md
           `}
         >
-          R
+          {props.title || "R"}
         </Text>
       </View>
       <Text
         className={`
           ${props.isPos ? "text-green-500" : "text-red-500"} 
-          text-md font-medium tracking-wider pr-2
+          text-md pr-2 font-medium tracking-wider
         `}
       >
         {props.recentTransaction}

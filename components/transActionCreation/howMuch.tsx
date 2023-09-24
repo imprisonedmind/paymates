@@ -24,8 +24,8 @@ export const HowMuch: FunctionComponent<Props> = (props) => {
         <MoneyInputBox />
       </View>
       {props.selectedUserIndices.length > 1 && (
-        <View className={`bg-orange-500/10 p-2 rounded-md`}>
-          <Text className={`text-xs text-orange-500 font-light tracking-wide`}>
+        <View className={`rounded-md bg-orange-500/10 p-2`}>
+          <Text className={`text-xs font-light tracking-wide text-orange-500`}>
             Multiple users have been selected, the amount will be split equally
             between them.
           </Text>

@@ -11,9 +11,9 @@ type Props = OwnProps;
 
 export const UserDetails: FunctionComponent<Props> = (props) => {
   return (
-    <View className={`h-full flex flex-col justify-center`}>
-      <Text className={`text-zinc-400 text-lg`}>{props.name}</Text>
-      <Text className={`text-zinc-400 text-md font-light tracking-wide`}>
+    <View className={`flex h-full flex-col justify-center`}>
+      <Text className={`text-lg text-zinc-400`}>{props.name}</Text>
+      <Text className={`text-md font-light tracking-wide text-zinc-400`}>
         {props.isPos ? `You got them ` : "Got You "}
         {props.recentCategory}
       </Text>

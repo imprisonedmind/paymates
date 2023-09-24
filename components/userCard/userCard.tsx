@@ -3,16 +3,23 @@ import { Text, TouchableOpacity, View } from "react-native";
 import { UserImage } from "./userImage";
 import { UserDetails } from "./userDetails";
 import { PriceChip } from "./priceChip";
+import { timeAgo } from "../../lib/utilities";
+import { TransActionTimeAgo } from "./transActionTimeAgo";
 
 interface OwnProps {
   index: number;
   user: {
     name: string;
     photoUrl: string;
-    recentCategory: string;
-    recentTransaction: number;
+  };
+  transAction: {
+    icon: string;
+    title: string;
+    amount: number[];
+    timeAgo: number;
   };
   isPos: boolean;
+  navigate: () => void;
 }
 
 type Props = OwnProps;
@@ -22,16 +29,17 @@ export const UserCard: FunctionComponent<Props> = (props) => {
     <TouchableOpacity
       key={props.index}
       activeOpacity={0.8}
+      onPress={props.navigate}
       className={`
-        flex bg-zinc-900 p-2 pr-3 rounded-3xl border border-zinc-800 h-fit w-full
+        flex h-fit w-full rounded-3xl border border-zinc-800 bg-zinc-900 p-2 pr-3
       `}
     >
       <View
         className={`
-          flex flex-row items-center justify-between h-14 
+          flex h-14 flex-row items-center justify-between 
         `}
       >
-        <View className={`flex flex-row items-center gap-2 h-full`}>
+        <View className={`flex h-full flex-row items-center gap-2`}>
           <View>
             <UserImage Uri={props.user.photoUrl} />
           </View>
@@ -39,26 +47,24 @@ export const UserCard: FunctionComponent<Props> = (props) => {
             <UserDetails
               name={props.user.name}
               isPos={props.isPos}
-              recentCategory={props.user.recentCategory}
+              recentCategory={props.transAction.icon}
             />
           </View>
         </View>
         <View
           className={`
-          flex flex-col h-full justify-center items-end gap-2
+          flex h-full flex-col items-end justify-center gap-2
         `}
         >
           <View>
             <PriceChip
               isPos={props.isPos}
-              recentTransaction={props.user.recentTransaction}
+              recentTransaction={props.transAction.amount[0]}
             />
           </View>
-          <Text
-            className={`flex text-zinc-400 text-xs font-light tracking-wider`}
-          >
-            {"4:12PM"}
-          </Text>
+          <View>
+            <TransActionTimeAgo timeAgo={props.transAction.timeAgo} />
+          </View>
         </View>
       </View>
     </TouchableOpacity>

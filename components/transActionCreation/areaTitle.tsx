@@ -9,6 +9,6 @@ type Props = OwnProps;
 
 export const AreaTitle: FunctionComponent<Props> = (props) => {
   return (
-    <Text className={`text-zinc-400 text-md font-medium`}>{props.title}</Text>
+    <Text className={`text-md font-medium text-zinc-400`}>{props.title}</Text>
   );
 };

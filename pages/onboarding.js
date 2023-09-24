@@ -4,10 +4,10 @@ import { LongRectangularButton } from "../components/buttons/longRectangularButt
 export default function OnboardingPage({ navigation }) {
   return (
     <View
-      className={`flex flex-col p-4 justify-between h-full pb-20 bg-zinc-950`}
+      className={`flex h-full flex-col justify-between bg-zinc-950 p-4 pb-20`}
     >
       <SafeAreaView />
-      <Text className={`text-[70px] text-zinc-300 font-bold text-center`}>
+      <Text className={`text-center text-[70px] font-bold text-zinc-300`}>
         PayMates
       </Text>
       <View className={`flex`}>
