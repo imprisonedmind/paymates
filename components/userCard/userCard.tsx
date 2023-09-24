@@ -3,14 +3,19 @@ import { Text, TouchableOpacity, View } from "react-native";
 import { UserImage } from "./userImage";
 import { UserDetails } from "./userDetails";
 import { PriceChip } from "./priceChip";
+import { timeAgo } from "../../lib/utilities";
 
 interface OwnProps {
   index: number;
   user: {
     name: string;
     photoUrl: string;
-    recentCategory: string;
-    recentTransaction: number;
+  };
+  transAction: {
+    icon: string;
+    title: string;
+    amount: number[];
+    timeAgo: number;
   };
   isPos: boolean;
 }
@@ -39,7 +44,7 @@ export const UserCard: FunctionComponent<Props> = (props) => {
             <UserDetails
               name={props.user.name}
               isPos={props.isPos}
-              recentCategory={props.user.recentCategory}
+              recentCategory={props.transAction.icon}
             />
           </View>
         </View>
@@ -51,13 +56,13 @@ export const UserCard: FunctionComponent<Props> = (props) => {
           <View>
             <PriceChip
               isPos={props.isPos}
-              recentTransaction={props.user.recentTransaction}
+              recentTransaction={props.transAction.amount[0]}
             />
           </View>
           <Text
             className={`flex text-xs font-light tracking-wider text-zinc-400`}
           >
-            {"4:12PM"}
+            {timeAgo(props.transAction.timeAgo)}
           </Text>
         </View>
       </View>

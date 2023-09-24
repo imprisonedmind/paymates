@@ -2,7 +2,7 @@ import React, { FunctionComponent } from "react";
 import { ScrollView, Text, TouchableOpacity, View } from "react-native";
 import { UserImage } from "../userCard/userImage";
 import { AreaTitle } from "./areaTitle";
-import { arr } from "../../lib/data";
+import { friendData } from "../../lib/data/friendData";
 
 interface OwnProps {
   selectedUserIndices: number[];
@@ -41,7 +41,7 @@ export const PickYourPaymates: FunctionComponent<Props> = (props) => {
         showsHorizontalScrollIndicator={false}
         className={`flex flex-row pl-4`}
       >
-        {arr.map((user, index) => {
+        {friendData.map((user, index) => {
           const isSelected = props.selectedUserIndices.includes(index);
           return (
             // TODO: I don't like using mr here!! **standard gap issue**

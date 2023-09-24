@@ -2,7 +2,7 @@ import React, { FunctionComponent, useState } from "react";
 import { AreaTitle } from "./areaTitle";
 import { Text, View } from "react-native";
 import { BottomSheetTextInput } from "@gorhom/bottom-sheet";
-import { iconData } from "../../lib/iconData";
+import { iconData } from "../../lib/data/iconData";
 
 interface OwnProps {
   oweThem: boolean;
