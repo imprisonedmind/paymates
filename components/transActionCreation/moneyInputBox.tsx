@@ -30,7 +30,7 @@ export const MoneyInputBox: FunctionComponent<Props> = (props) => {
         placeholder={"Enter an amount"}
         placeholderTextColor={"#27272a"}
         onSubmitEditing={() => {
-          console.log("test");
+          console.log("on submit");
         }}
       />
     </View>

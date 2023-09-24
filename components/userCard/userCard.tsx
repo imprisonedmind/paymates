@@ -3,16 +3,23 @@ import { Text, TouchableOpacity, View } from "react-native";
 import { UserImage } from "./userImage";
 import { UserDetails } from "./userDetails";
 import { PriceChip } from "./priceChip";
+import { timeAgo } from "../../lib/utilities";
+import { TransActionTimeAgo } from "./transActionTimeAgo";
 
 interface OwnProps {
   index: number;
   user: {
     name: string;
     photoUrl: string;
-    recentCategory: string;
-    recentTransaction: number;
+  };
+  transAction: {
+    icon: string;
+    title: string;
+    amount: number[];
+    timeAgo: number;
   };
   isPos: boolean;
+  navigate: () => void;
 }
 
 type Props = OwnProps;
@@ -22,6 +29,7 @@ export const UserCard: FunctionComponent<Props> = (props) => {
     <TouchableOpacity
       key={props.index}
       activeOpacity={0.8}
+      onPress={props.navigate}
       className={`
         flex h-fit w-full rounded-3xl border border-zinc-800 bg-zinc-900 p-2 pr-3
       `}
@@ -39,7 +47,7 @@ export const UserCard: FunctionComponent<Props> = (props) => {
             <UserDetails
               name={props.user.name}
               isPos={props.isPos}
-              recentCategory={props.user.recentCategory}
+              recentCategory={props.transAction.icon}
             />
           </View>
         </View>
@@ -51,14 +59,12 @@ export const UserCard: FunctionComponent<Props> = (props) => {
           <View>
             <PriceChip
               isPos={props.isPos}
-              recentTransaction={props.user.recentTransaction}
+              recentTransaction={props.transAction.amount[0]}
             />
           </View>
-          <Text
-            className={`flex text-xs font-light tracking-wider text-zinc-400`}
-          >
-            {"4:12PM"}
-          </Text>
+          <View>
+            <TransActionTimeAgo timeAgo={props.transAction.timeAgo} />
+          </View>
         </View>
       </View>
     </TouchableOpacity>
