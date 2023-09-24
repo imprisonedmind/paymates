@@ -26,7 +26,7 @@ export const TransActionCreation: FunctionComponent<Props> = (props) => {
         <WhoOwesWho oweThem={oweThem} setOweThem={setOweThem} />
       </View>
       <View className={`px-4`}>
-        <WhatWasIt />
+        <WhatWasIt oweThem={oweThem} />
       </View>
       <View className={`px-4 mb-4`}>
         <HowMuch oweThem={oweThem} selectedUserIndices={selectedUserIndices} />

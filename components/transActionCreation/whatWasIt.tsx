@@ -4,7 +4,9 @@ import { Text, View } from "react-native";
 import { BottomSheetTextInput } from "@gorhom/bottom-sheet";
 import { iconData } from "../../lib/iconData";
 
-interface OwnProps {}
+interface OwnProps {
+  oweThem: boolean;
+}
 
 type Props = OwnProps;
 
@@ -19,7 +21,11 @@ export const WhatWasIt: FunctionComponent<Props> = (props) => {
   return (
     <View className={`flex flex-col gap-2`}>
       <View>
-        <AreaTitle title={"What did you get them?"} />
+        <AreaTitle
+          title={`What did ${props.oweThem ? "they" : "you"} get ${
+            props.oweThem ? "you" : "them"
+          }?`}
+        />
       </View>
       <View
         className={`flex rounded-md overflow-hidden border border-zinc-800`}
