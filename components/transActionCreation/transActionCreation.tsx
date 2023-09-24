@@ -1,9 +1,8 @@
 import React, { FunctionComponent, useState } from "react";
-import { Text, View } from "react-native";
+import { View } from "react-native";
 import { PickYourPaymates } from "./pickYourPaymates";
 import { WhoOwesWho } from "./whoOwesWho";
-import { AreaTitle } from "./areaTitle";
-import { BottomSheetTextInput } from "@gorhom/bottom-sheet";
+import { HowMuch } from "./howMuch";
 
 interface OwnProps {}
 
@@ -21,39 +20,7 @@ export const TransActionCreation: FunctionComponent<Props> = (props) => {
         <WhoOwesWho oweThem={oweThem} setOweThem={setOweThem} />
       </View>
       <View className={`pr-4`}>
-        <AreaTitle
-          title={`How much do ${oweThem ? "you" : "they"} owe ${
-            oweThem ? "them" : "you"
-          }? `}
-        />
-        <View
-          className={`flex rounded-md overflow-hidden border border-zinc-800`}
-        >
-          <View
-            className={`
-              absolute top-0 h-full w-10 bg-zinc-800 z-50 flex items-center justify-center
-          `}
-          >
-            <Text className={`text-lg font-medium`}>R</Text>
-          </View>
-          <BottomSheetTextInput
-            style={{
-              backgroundColor: "#09090b",
-              padding: 12,
-              paddingLeft: 50,
-              color: "#a1a1aa",
-              fontSize: 18,
-            }}
-            inputMode={"decimal"}
-            returnKeyType={"done"}
-            returnKeyLabel={"test"}
-            placeholder={"Enter an amount"}
-            placeholderTextColor={"#27272a"}
-            onSubmitEditing={() => {
-              console.log("test");
-            }}
-          />
-        </View>
+        <HowMuch oweThem={oweThem} />
       </View>
     </View>
   );
