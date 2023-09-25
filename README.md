@@ -28,7 +28,7 @@ engaging features will transform the way you manage shared expenses.
     - [ ] Expand Single transaction modal
     - [ ] React to a transaction
     - [X] Top bar 'score'
-    - [ ] Click on user image for their details
+    - [X] Click on user image for their details
 - [ ] *Settings Page*
     - [ ] User Picture
     - [ ] User Details     
