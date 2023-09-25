@@ -1,31 +1,13 @@
 import { Animated, SafeAreaView, View } from "react-native";
-import React, { useEffect } from "react";
+import React from "react";
 import { UserCard } from "../components/userCard/userCard";
-import { useBottomSheetContext } from "../lib/context/bottomSheetContext";
-import { TransActionCreation } from "../components/transActionCreation/transActionCreation";
 import { friendData } from "../lib/data/friendData";
 import { transActionData } from "../lib/data/transActionData";
-import { RouteProp, useNavigation } from "@react-navigation/native";
+import { useNavigation } from "@react-navigation/native";
 import ScrollView = Animated.ScrollView;
-//
-// type NavigationProp = <
-//   {
-//     U2U: {
-//       title: string;
-//       backTitle: string;
-//       userID: string;
-//     };
-//   },
-//   "U2U"
-// >;
 
 export const HomePage: React.FunctionComponent = () => {
-  const { setBottomSheetChildren } = useBottomSheetContext();
   const navigation = useNavigation<any>();
-
-  useEffect(() => {
-    setBottomSheetChildren(<TransActionCreation />);
-  }, []);
 
   return (
     <View className={`flex h-full flex-col bg-zinc-950`}>
