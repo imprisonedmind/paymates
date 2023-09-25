@@ -17,10 +17,9 @@ export const UserBankInformation: FunctionComponent<Props> = (props) => {
     (colorData) => colorData.bank === props.bank.toLowerCase().replace(" ", ""),
   );
 
-  console.log(color);
-
   return (
     <View
+      //Tailwind colors are not in memory,  so we need to use hash values
       style={{
         backgroundColor: color?.bgColor ?? "#3f3f46",
         borderColor: color?.borderColor ?? "#52525b",
