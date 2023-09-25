@@ -18,7 +18,10 @@ export const LandingPage: React.FC<{}> = () => {
       initialRouteName={"Home"}
       screenOptions={{
         headerShown: false,
-        tabBarStyle: { backgroundColor: "#18181b" },
+        tabBarStyle: {
+          borderTopColor: "#3f3f46",
+          backgroundColor: "#18181b",
+        },
         tabBarShowLabel: false,
       }}
     >
