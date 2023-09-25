@@ -22,19 +22,16 @@ engaging features will transform the way you manage shared expenses.
     - [ ] Login
     - [ ] Terms and Conditions
     - [ ] Privacy Policy
-- [ ] *User List Screen*
-    - [X] User Card
-    - [ ] Time ago
-    - [ ] Onpress Navigate to page
 - [ ] *Single Transaction page*
-    - [ ] Mock Data
-    - [ ] Left vs Right UI
+    - [X] Mock Data
+    - [X] Left vs Right UI
     - [ ] Expand Single transaction modal
-    - [ ] Top bar 'score'
-- [ ] *Add Bottomsheet Modal*
-    - [X] Make this callable from anywhere
-    - [X] Allow modular children
-    - [X] Fix the 'top chip' colour
+    - [ ] React to a transaction
+    - [X] Top bar 'score'
+    - [ ] Click on user image for their details
+- [ ] *Settings Page*
+    - [ ] User Picture
+    - [ ] User Details     
 - [ ] *Transaction Creation*
     - [X] User select
     - [X] Who owes who toggle
@@ -43,6 +40,14 @@ engaging features will transform the way you manage shared expenses.
     - [X] Transaction Amount
     - [X] Disable submit button until all fields
     - [ ] Multiple Items ??
+- [X] *User List Screen*
+    - [X] User Card
+    - [X] Time ago
+    - [X] Onpress Navigate to page
+- [X] *Add Bottomsheet Modal*
+    - [X] Make this callable from anywhere
+    - [X] Allow modular children
+    - [X] Fix the 'top chip' colour
 
 ## Contributing
 
