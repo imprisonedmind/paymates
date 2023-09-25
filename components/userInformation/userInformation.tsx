@@ -20,8 +20,6 @@ export const UserInformation: FunctionComponent<Props> = (props) => {
     (account) => account.owner === props.user.uid,
   );
 
-  console.log(accounts);
-
   return (
     <View className={`flex items-center pb-12 pt-4`}>
       <View className={`flex flex-col items-center`}>
