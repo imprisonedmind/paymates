@@ -49,6 +49,7 @@ export const LandingPage: React.FC<{}> = () => {
                 overflow-hidden rounded-full
               `}
             >
+              {/*TODO: don't use scale it breaks flex relationship*/}
               <View
                 className={`absolute bottom-0 flex h-10 w-20 scale-105 bg-zinc-950`}
               />

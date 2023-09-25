@@ -25,7 +25,7 @@ export const UserBankInformation: FunctionComponent<Props> = (props) => {
         borderColor: color?.borderColor ?? "#52525b",
       }}
       className={`
-        mr-4 mt-4 flex w-[250] rounded-2xl border p-4
+        mr-4 flex w-[250] rounded-2xl border p-4
       `}
     >
       <View className={`flex flex-row items-center justify-between`}>
