@@ -3,25 +3,23 @@ import { ScrollView, View } from "react-native";
 import { UserImage } from "../userCard/userImage";
 import { AreaTitle } from "../transActionCreation/areaTitle";
 import { UserBankInformation } from "./userBankInformation";
-import { cardColorData } from "../../lib/data/cardColorData";
+import { accountData } from "../../lib/data/accountData";
 
 interface OwnProps {
   user: {
+    uid: string;
     name: string;
     photoUrl: string;
-    accounts: {
-      logo: any;
-      bank: string;
-      branchCode: number;
-      accountNumber: number;
-      accountName: string;
-    }[];
   };
 }
 
 type Props = OwnProps;
 
 export const UserInformation: FunctionComponent<Props> = (props) => {
+  const accounts = accountData.filter(
+    (account) => account.owner === props.user.uid,
+  );
+
   return (
     <View className={`flex items-center pb-12 pt-4`}>
       <View className={`flex flex-col items-center`}>
@@ -37,7 +35,7 @@ export const UserInformation: FunctionComponent<Props> = (props) => {
         showsHorizontalScrollIndicator={false}
         className={`px-4`}
       >
-        {props.user.accounts.map((card) => {
+        {accounts.map((card) => {
           return (
             <UserBankInformation
               key={card.bank}

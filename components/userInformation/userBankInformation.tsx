@@ -5,9 +5,9 @@ import { cardColorData } from "../../lib/data/cardColorData";
 interface OwnProps {
   uri: string;
   bank: string;
-  branchCode: number;
+  branchCode: string;
   accountName: string;
-  accountNumber: number;
+  accountNumber: string;
 }
 
 type Props = OwnProps;
