@@ -31,7 +31,7 @@ engaging features will transform the way you manage shared expenses.
     - [X] Top bar 'score'
     - [X] Click on user image for their details
 - [ ] *Settings Page*
-    - [ ] User Picture
+    - [X] User Picture
     - [ ] User Details
     - [ ] Currency
     - [ ] Accounts  
