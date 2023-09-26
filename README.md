@@ -14,6 +14,7 @@ engaging features will transform the way you manage shared expenses.
 
 - [X] Tailwind Classes Prettier Sorting
 - [ ] Auth
+- [ ] Change touchable to press-ables with animation
 - [ ] *Auth Screen*
     - [ ] Header Image
     - [ ] Google Sign in
@@ -31,7 +32,9 @@ engaging features will transform the way you manage shared expenses.
     - [X] Click on user image for their details
 - [ ] *Settings Page*
     - [ ] User Picture
-    - [ ] User Details     
+    - [ ] User Details
+    - [ ] Currency
+    - [ ] Accounts  
 - [ ] *Transaction Creation*
     - [X] User select
     - [X] Who owes who toggle
