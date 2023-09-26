@@ -1,18 +1,31 @@
-import { Animated, SafeAreaView, View } from "react-native";
-import React from "react";
+import { SafeAreaView, ScrollView, View } from "react-native";
+import React, { useRef, useState } from "react";
 import { UserCard } from "../components/userCard/userCard";
 import { friendData } from "../lib/data/friendData";
 import { transActionData } from "../lib/data/transActionData";
 import { useNavigation } from "@react-navigation/native";
-import ScrollView = Animated.ScrollView;
+import FabAddTransAction from "../components/buttons/fabAddTransAction";
 
 export const HomePage: React.FunctionComponent = () => {
   const navigation = useNavigation<any>();
 
+  const [scrollHeight, setScrollHeight] = useState(0);
+  const scrollViewRef = useRef(null);
+
+  const handleScroll = (event) => {
+    setScrollHeight(event.nativeEvent.contentOffset.y);
+  };
+
   return (
-    <View className={`flex h-full flex-col bg-zinc-950`}>
+    <View className={`relative flex h-full w-full flex-col bg-zinc-950`}>
       <SafeAreaView />
-      <ScrollView className={`flex-1 flex-col gap-4 px-2`}>
+      <FabAddTransAction show={scrollHeight < 10} />
+      <ScrollView
+        ref={scrollViewRef}
+        onScrollEndDrag={handleScroll}
+        onMomentumScrollEnd={handleScroll}
+        className={`flex-1 flex-col gap-4 px-2`}
+      >
         {friendData.map((user, index) => {
           if (user.uid == "288fb0b8-5b07-11ee-8c99-0242ac120002") return;
           const transActionUID = user.recentTransaction;

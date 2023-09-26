@@ -8,7 +8,6 @@ import { UserImage } from "../components/userCard/userImage";
 import { friendData } from "../lib/data/friendData";
 import { TransActionTimeAgo } from "../components/userCard/transActionTimeAgo";
 
-// Define the type for the route prop specific to this screen
 type UserToUserHistoryRouteProp = RouteProp<
   {
     U2U: {
