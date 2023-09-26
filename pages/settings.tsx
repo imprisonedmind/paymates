@@ -14,7 +14,6 @@ export const SettingsPage: React.FC<{}> = () => {
       <View>
         <UserDetailArea photoUrl={user.photoUrl} name={user.name} />
       </View>
-
       <View>
         <EditButtonArea />
       </View>

@@ -10,6 +10,9 @@ import BottomSheet from "./components/bottomSheet/bottomSheet";
 import { BottomSheetContextProvider } from "./lib/context/bottomSheetContext";
 import { StatusBar } from "expo-status-bar";
 import { UserToUserHistory } from "./pages/userToUserHistory";
+import { Details } from "./pages/details";
+import { Currency } from "./pages/currency";
+import { Accounts } from "./pages/accounts";
 
 const Stack = createNativeStackNavigator();
 
@@ -25,6 +28,9 @@ const App = () => {
               screenOptions={{
                 headerStyle: {
                   backgroundColor: "#18181b",
+                },
+                headerTitleStyle: {
+                  color: "#2563eb",
                 },
               }}
             >
@@ -48,14 +54,16 @@ const App = () => {
                 component={UserToUserHistory}
                 options={{
                   headerShown: true,
-                  headerTintColor: "#2563eb",
                 }}
               />
               <Stack.Screen
                 name="Settings"
                 component={SettingsPage}
-                options={{ headerLeft: () => null }}
+                options={{ headerShown: true, headerLeft: () => null }}
               />
+              <Stack.Screen name="Details" component={Details} />
+              <Stack.Screen name="Currency" component={Currency} />
+              <Stack.Screen name="Accounts" component={Accounts} />
             </Stack.Navigator>
           </NavigationContainer>
         </BottomSheetModalProvider>
