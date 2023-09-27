@@ -24,7 +24,7 @@ export const HomePage: React.FunctionComponent = () => {
         ref={scrollViewRef}
         onScrollEndDrag={handleScroll}
         onMomentumScrollEnd={handleScroll}
-        className={`flex-1 flex-col gap-4 px-2`}
+        className={`w-full flex-1 flex-col space-y-4 px-2`}
       >
         {friendData.map((user, index) => {
           if (user.uid == "288fb0b8-5b07-11ee-8c99-0242ac120002") return;
@@ -34,23 +34,22 @@ export const HomePage: React.FunctionComponent = () => {
           );
           const isPos = transAction.amount[0] > 0;
           return (
-            <View key={index} className={`flex h-fit`}>
-              <UserCard
-                index={index}
-                user={user}
-                transAction={transAction}
-                isPos={isPos}
-                navigate={() => {
-                  navigation.navigate("U2U", {
-                    title: "test this",
-                    backTitle: "Home",
-                    userID: user.uid,
-                  });
-                }}
-              />
-            </View>
+            <UserCard
+              key={user.uid}
+              user={user}
+              transAction={transAction}
+              isPos={isPos}
+              navigate={() =>
+                navigation.navigate("U2U", {
+                  title: "test this",
+                  backTitle: "Home",
+                  userID: user.uid,
+                })
+              }
+            />
           );
         })}
+        <View className={`h-12`}></View>
       </ScrollView>
     </View>
   );
