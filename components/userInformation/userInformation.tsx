@@ -1,7 +1,6 @@
 import React, { FunctionComponent } from "react";
-import { ScrollView, View, Text } from "react-native";
+import { ScrollView, Text, View } from "react-native";
 import { UserImage } from "../userCard/userImage";
-import { AreaTitle } from "../transActionCreation/areaTitle";
 import { UserBankInformation } from "./userBankInformation";
 import { accountData } from "../../lib/data/accountData";
 
@@ -21,22 +20,20 @@ export const UserInformation: FunctionComponent<Props> = (props) => {
   );
 
   return (
-    <View className={`flex items-center gap-8 pb-12 pt-4`}>
-      <View className={`flex flex-col items-center gap-1`}>
-        <View>
-          <UserImage
-            Uri={props.user.photoUrl}
-            circle={true}
-            height={"h-24"}
-            width={"w-24"}
-          />
-        </View>
+    <View className={`flex items-center space-y-4 pb-12 pt-4`}>
+      <View className={`flex flex-col items-center space-y-1`}>
+        <UserImage
+          uri={props.user.photoUrl}
+          circle={true}
+          height={"h-24"}
+          width={"w-24"}
+        />
         <Text className={`text-lg text-zinc-400`}>{props.user.name} </Text>
       </View>
       <ScrollView
         horizontal={true}
         showsHorizontalScrollIndicator={false}
-        className={`px-4`}
+        className={`flex flex-row space-x-4 px-4`}
       >
         {accounts.map((card) => {
           return (
@@ -50,6 +47,7 @@ export const UserInformation: FunctionComponent<Props> = (props) => {
             />
           );
         })}
+        <View className={`w-4`}></View>
       </ScrollView>
     </View>
   );

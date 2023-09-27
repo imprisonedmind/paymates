@@ -28,7 +28,7 @@ export const HeaderUserImage: FunctionComponent<Props> = (props) => {
       className={`flex h-11 w-min items-end justify-center`}
     >
       <UserImage
-        Uri={user.photoUrl}
+        uri={user.photoUrl}
         circle={true}
         height={"h-10"}
         width={"w-10"}
