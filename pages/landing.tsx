@@ -13,7 +13,7 @@ export const LandingPage: React.FC<{}> = () => {
       screenOptions={{
         headerShown: false,
         tabBarStyle: {
-          borderTopColor: "#2563eb",
+          borderTopColor: "#52525b",
           backgroundColor: "#18181b",
         },
         tabBarShowLabel: false,

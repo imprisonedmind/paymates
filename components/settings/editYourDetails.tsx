@@ -1,8 +1,9 @@
 import React, { FunctionComponent } from "react";
-import { Text, TouchableOpacity, View } from "react-native";
+import { Text, TouchableOpacity, View, ViewStyle } from "react-native";
 import { Octicons } from "@expo/vector-icons";
 
 interface OwnProps {
+  style?: ViewStyle;
   icon: any;
   iconBgColor: any;
   title: string;
@@ -13,12 +14,13 @@ interface OwnProps {
 type Props = OwnProps;
 
 export const EditYourDetails: FunctionComponent<Props> = (props) => {
-  const { icon, iconBgColor, title, description, callBackFn } = props;
+  const { style, icon, iconBgColor, title, description, callBackFn } = props;
 
   return (
     <TouchableOpacity
       activeOpacity={0.5}
       onPress={callBackFn}
+      style={style}
       className={`
         flex h-min w-full flex-row items-center justify-between rounded-xl bg-zinc-800
         p-2 pr-4
