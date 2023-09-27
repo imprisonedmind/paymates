@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FunctionComponent } from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { SettingsPage } from "./settings";
 import { HomePage } from "./home";
@@ -6,7 +6,7 @@ import { FontAwesome5, Ionicons } from "@expo/vector-icons";
 
 const Tab = createBottomTabNavigator();
 
-export const LandingPage: React.FC<{}> = () => {
+export const LandingPage: FunctionComponent<{}> = () => {
   return (
     <Tab.Navigator
       initialRouteName={"Home"}

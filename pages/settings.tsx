@@ -1,10 +1,10 @@
 import { View } from "react-native";
-import { FC } from "react";
+import { FunctionComponent } from "react";
 import { friendData } from "../lib/data/friendData";
 import { UserDetailArea } from "../components/settings/userDetailArea";
 import { EditButtonArea } from "../components/settings/editButtonArea";
 
-export const SettingsPage: FC<{}> = () => {
+export const SettingsPage: FunctionComponent<{}> = () => {
   const user = friendData.find(
     (friend) => friend.uid === "288fb0b8-5b07-11ee-8c99-0242ac120002",
   );

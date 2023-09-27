@@ -19,11 +19,13 @@ export default function TransActionCreation() {
       <WhoOwesWho oweThem={oweThem} setOweThem={setOweThem} />
       <WhatWasIt oweThem={oweThem} />
       <HowMuch oweThem={oweThem} selectedUserIndices={selectedUserIndices} />
-      <LongRectangularButton
-        title={"Submit"}
-        textColour={"text-zinc-300"}
-        buttonColour={"bg-blue-600"}
-      />
+      <View className={`px-4 pt-4`}>
+        <LongRectangularButton
+          title={"Submit"}
+          textColour={"text-zinc-300"}
+          buttonColour={"bg-blue-600"}
+        />
+      </View>
     </View>
   );
 }
