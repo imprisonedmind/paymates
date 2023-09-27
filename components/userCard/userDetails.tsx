@@ -1,7 +1,8 @@
 import React, { FunctionComponent } from "react";
-import { Text, View } from "react-native";
+import { Text, View, ViewStyle } from "react-native";
 
 interface OwnProps {
+  style?: ViewStyle;
   name: string;
   isPos: boolean;
   recentCategory: string;
@@ -10,12 +11,14 @@ interface OwnProps {
 type Props = OwnProps;
 
 export const UserDetails: FunctionComponent<Props> = (props) => {
+  const { style, name, isPos, recentCategory } = props;
+
   return (
-    <View className={`flex h-full flex-col justify-center`}>
-      <Text className={`text-lg text-zinc-400`}>{props.name}</Text>
+    <View style={style} className={`flex h-full flex-col justify-center`}>
+      <Text className={`text-lg text-zinc-400`}>{name}</Text>
       <Text className={`text-md font-light tracking-wide text-zinc-400`}>
-        {props.isPos ? `You got them ` : "Got You "}
-        {props.recentCategory}
+        {isPos ? `You got them ` : "Got You "}
+        {recentCategory}
       </Text>
     </View>
   );

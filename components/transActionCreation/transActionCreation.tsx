@@ -1,37 +1,25 @@
-import React, { FunctionComponent, useState } from "react";
+import React, { useState } from "react";
 import { View } from "react-native";
 import { PickYourPaymates } from "./pickYourPaymates";
 import { WhoOwesWho } from "./whoOwesWho";
 import { HowMuch } from "./howMuch";
-import { LongRectangularButton } from "../buttons/longRectangularButton";
 import { WhatWasIt } from "./whatWasIt";
+import { LongRectangularButton } from "../buttons/longRectangularButton";
 
-interface OwnProps {}
-
-type Props = OwnProps;
-
-export const TransActionCreation: FunctionComponent<Props> = (props) => {
+export default function TransActionCreation() {
   const [selectedUserIndices, setSelectedUserIndices] = useState<number[]>([]);
   const [oweThem, setOweThem] = useState(false);
 
   return (
-    <View className={`flex flex-col gap-4 pb-8 pt-4`}>
-      <View>
-        <PickYourPaymates
-          selectedUserIndices={selectedUserIndices}
-          setSelectedUserIndices={setSelectedUserIndices}
-        />
-      </View>
-      <View className={`px-4`}>
-        <WhoOwesWho oweThem={oweThem} setOweThem={setOweThem} />
-      </View>
-      <View className={`px-4`}>
-        <WhatWasIt oweThem={oweThem} />
-      </View>
-      <View className={`mb-4 px-4`}>
-        <HowMuch oweThem={oweThem} selectedUserIndices={selectedUserIndices} />
-      </View>
-      <View className={`px-4`}>
+    <View className={`flex flex-col space-y-4 pb-8 `}>
+      <PickYourPaymates
+        selectedUserIndices={selectedUserIndices}
+        setSelectedUserIndices={setSelectedUserIndices}
+      />
+      <WhoOwesWho oweThem={oweThem} setOweThem={setOweThem} />
+      <WhatWasIt oweThem={oweThem} />
+      <HowMuch oweThem={oweThem} selectedUserIndices={selectedUserIndices} />
+      <View className={`px-4 pt-4`}>
         <LongRectangularButton
           title={"Submit"}
           textColour={"text-zinc-300"}
@@ -40,4 +28,4 @@ export const TransActionCreation: FunctionComponent<Props> = (props) => {
       </View>
     </View>
   );
-};
+}

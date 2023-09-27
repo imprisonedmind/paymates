@@ -9,12 +9,14 @@ interface OwnProps {
 type Props = OwnProps;
 
 export const Toggle: FunctionComponent<Props> = (props) => {
+  const { isActive, setIsActive } = props;
+
   return (
     <Switch
-      value={props.isActive}
-      onChange={() => props.setIsActive(!props.isActive)}
+      value={isActive}
+      onChange={() => setIsActive(!isActive)}
       trackColor={{ false: "#27272a", true: "#22c55e" }}
-      thumbColor={props.isActive ? "#f4f4f5" : "#52525b"}
+      thumbColor={isActive ? "#f4f4f5" : "#52525b"}
     />
   );
 };

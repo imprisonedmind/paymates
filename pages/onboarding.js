@@ -10,7 +10,7 @@ export default function OnboardingPage({ navigation }) {
       <Text className={`text-center text-[70px] font-bold text-zinc-300`}>
         PayMates
       </Text>
-      <View className={`flex`}>
+      <View className={`flex space-y-4`}>
         <LongRectangularButton
           title={"Continue with Google"}
           buttonColour={"bg-zinc-200 border-zinc-100"}
