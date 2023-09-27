@@ -15,20 +15,20 @@ interface OwnProps {
 type Props = OwnProps;
 
 export const UserInformation: FunctionComponent<Props> = (props) => {
-  const accounts = accountData.filter(
-    (account) => account.owner === props.user.uid,
-  );
+  const { user } = props;
+
+  const accounts = accountData.filter((account) => account.owner === user.uid);
 
   return (
     <View className={`flex items-center space-y-4 pb-12 pt-4`}>
       <View className={`flex flex-col items-center space-y-1`}>
         <UserImage
-          uri={props.user.photoUrl}
+          uri={user.photoUrl}
           circle={true}
           height={"h-24"}
           width={"w-24"}
         />
-        <Text className={`text-lg text-zinc-400`}>{props.user.name} </Text>
+        <Text className={`text-lg text-zinc-400`}>{user.name} </Text>
       </View>
       <ScrollView
         horizontal={true}

@@ -29,7 +29,7 @@ export const UserCard: FunctionComponent<Props> = (props) => {
   return (
     <TouchableOpacity
       activeOpacity={0.8}
-      onPress={props.navigate}
+      onPress={navigate}
       style={style}
       className={`
         flex h-fit w-full rounded-3xl border border-zinc-800 bg-zinc-900 p-2 pr-3

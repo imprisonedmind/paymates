@@ -1,9 +1,10 @@
 import React, { FunctionComponent } from "react";
 import { AreaTitle } from "./areaTitle";
-import { Text, View } from "react-native";
+import { Text, View, ViewStyle } from "react-native";
 import { MoneyInputBox } from "./moneyInputBox";
 
 interface OwnProps {
+  style?: ViewStyle;
   oweThem: boolean;
   selectedUserIndices: number[];
 }
@@ -11,19 +12,16 @@ interface OwnProps {
 type Props = OwnProps;
 
 export const HowMuch: FunctionComponent<Props> = (props) => {
+  const { style, oweThem, selectedUserIndices } = props;
+  const title = `How much do ${oweThem ? "you" : "they"} owe ${
+    oweThem ? "them" : "you"
+  }? `;
+
   return (
-    <View className={`flex flex-col gap-2`}>
-      <View>
-        <AreaTitle
-          title={`How much do ${props.oweThem ? "you" : "they"} owe ${
-            props.oweThem ? "them" : "you"
-          }? `}
-        />
-      </View>
-      <View>
-        <MoneyInputBox />
-      </View>
-      {props.selectedUserIndices.length > 1 && (
+    <View style={style} className={`flex flex-col space-y-2 px-4`}>
+      <AreaTitle title={title} />
+      <MoneyInputBox />
+      {selectedUserIndices.length > 1 && (
         <View className={`rounded-md bg-orange-500/10 p-2`}>
           <Text className={`text-xs font-light tracking-wide text-orange-500`}>
             Multiple users have been selected, the amount will be split equally

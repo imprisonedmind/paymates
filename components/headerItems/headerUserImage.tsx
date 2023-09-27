@@ -12,8 +12,10 @@ interface OwnProps {
 type Props = OwnProps;
 
 export const HeaderUserImage: FunctionComponent<Props> = (props) => {
+  const { UID } = props;
+
   const { setIsOpen, setBottomSheetChildren } = useBottomSheetContext();
-  const user = friendData.find((user) => user.uid === props.UID);
+  const user = friendData.find((user) => user.uid === UID);
 
   const handlePress = () => {
     setIsOpen(true);

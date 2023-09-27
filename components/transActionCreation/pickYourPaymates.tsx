@@ -1,10 +1,17 @@
 import React, { FunctionComponent } from "react";
-import { ScrollView, Text, TouchableOpacity, View } from "react-native";
+import {
+  ScrollView,
+  Text,
+  TouchableOpacity,
+  View,
+  ViewStyle,
+} from "react-native";
 import { UserImage } from "../userCard/userImage";
 import { AreaTitle } from "./areaTitle";
 import { friendData } from "../../lib/data/friendData";
 
 interface OwnProps {
+  style?: ViewStyle;
   selectedUserIndices: number[];
   setSelectedUserIndices: (v) => void;
 }
@@ -12,18 +19,20 @@ interface OwnProps {
 type Props = OwnProps;
 
 export const PickYourPaymates: FunctionComponent<Props> = (props) => {
+  const { style, selectedUserIndices, setSelectedUserIndices } = props;
+
   const toggleUserSelection = (index: number) => {
     // Check if the index is already in the selectedUserIndices array
-    const isSelected = props.selectedUserIndices.includes(index);
+    const isSelected = selectedUserIndices.includes(index);
 
     if (isSelected) {
       // If the user is already selected, remove them from the array
-      props.setSelectedUserIndices((prevSelectedUserIndices) =>
+      setSelectedUserIndices((prevSelectedUserIndices) =>
         prevSelectedUserIndices.filter((i) => i !== index),
       );
     } else {
       // If the user is not selected, add them to the array
-      props.setSelectedUserIndices((prevSelectedUserIndices) => [
+      setSelectedUserIndices((prevSelectedUserIndices) => [
         ...prevSelectedUserIndices,
         index,
       ]);
@@ -31,7 +40,7 @@ export const PickYourPaymates: FunctionComponent<Props> = (props) => {
   };
 
   return (
-    <View className={`flex flex-col gap-2`}>
+    <View style={style} className={`flex flex-col space-y-4`}>
       <View className={`pl-4`}>
         <AreaTitle title={"Pick your Paymates"} />
       </View>
@@ -39,33 +48,34 @@ export const PickYourPaymates: FunctionComponent<Props> = (props) => {
       <ScrollView
         horizontal={true}
         showsHorizontalScrollIndicator={false}
-        className={`flex flex-row pl-4`}
+        className={`flex flex-row space-x-2 pl-4`}
       >
         {friendData.map((user, index) => {
-          const isSelected = props.selectedUserIndices.includes(index);
+          const isSelected = selectedUserIndices.includes(index);
           if (user.uid === "288fb0b8-5b07-11ee-8c99-0242ac120002") return;
           return (
-            // TODO: I don't like using mr here!! **standard gap issue**
             <TouchableOpacity
               key={index}
               activeOpacity={0.5}
               onPress={() => toggleUserSelection(index)}
-              className={`mr-3 flex items-center justify-center`}
             >
-              <UserImage
-                Uri={user.photoUrl}
-                circle={true}
-                isSelected={isSelected}
-              />
-              <Text
-                className={`
-                  ${isSelected ? "text-blue-500" : "text-zinc-500"} mt-1 `}
-              >
-                {user.name}
-              </Text>
+              <View className={`flex flex-col items-center space-y-1`}>
+                <UserImage
+                  uri={user.photoUrl}
+                  circle={true}
+                  isSelected={isSelected}
+                />
+                <Text
+                  className={`
+                  ${isSelected ? "text-blue-500" : "text-zinc-500"}`}
+                >
+                  {user.name}
+                </Text>
+              </View>
             </TouchableOpacity>
           );
         })}
+        <View className={`w-4`}></View>
       </ScrollView>
     </View>
   );
