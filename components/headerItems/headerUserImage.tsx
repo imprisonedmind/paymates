@@ -12,8 +12,10 @@ interface OwnProps {
 type Props = OwnProps;
 
 export const HeaderUserImage: FunctionComponent<Props> = (props) => {
+  const { UID } = props;
+
   const { setIsOpen, setBottomSheetChildren } = useBottomSheetContext();
-  const user = friendData.find((user) => user.uid === props.UID);
+  const user = friendData.find((user) => user.uid === UID);
 
   const handlePress = () => {
     setIsOpen(true);
@@ -28,7 +30,7 @@ export const HeaderUserImage: FunctionComponent<Props> = (props) => {
       className={`flex h-11 w-min items-end justify-center`}
     >
       <UserImage
-        Uri={user.photoUrl}
+        uri={user.photoUrl}
         circle={true}
         height={"h-10"}
         width={"w-10"}

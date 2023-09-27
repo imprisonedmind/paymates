@@ -1,14 +1,19 @@
 import React, { FunctionComponent } from "react";
-import { Text } from "react-native";
+import { Text, View, ViewStyle } from "react-native";
 
 interface OwnProps {
+  style?: ViewStyle;
   title: string;
 }
 
 type Props = OwnProps;
 
 export const AreaTitle: FunctionComponent<Props> = (props) => {
+  const { style, title } = props;
+
   return (
-    <Text className={`text-md font-medium text-zinc-400`}>{props.title}</Text>
+    <Text style={style} className={`text-md font-medium text-zinc-400`}>
+      {title}
+    </Text>
   );
 };

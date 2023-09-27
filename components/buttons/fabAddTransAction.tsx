@@ -1,4 +1,4 @@
-import { TransActionCreation } from "../transActionCreation/transActionCreation";
+import TransActionCreation from "../transActionCreation/transActionCreation";
 import { Ionicons } from "@expo/vector-icons";
 import { TouchableOpacity, View } from "react-native";
 import { useBottomSheetContext } from "../../lib/context/bottomSheetContext";

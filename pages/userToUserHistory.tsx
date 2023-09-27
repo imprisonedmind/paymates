@@ -1,12 +1,12 @@
 import React, { FunctionComponent, useEffect } from "react";
-import { ScrollView, Text, View } from "react-native";
+import { SafeAreaView, ScrollView, View } from "react-native";
 import { RouteProp, useNavigation, useRoute } from "@react-navigation/native";
 import { HeaderUserImage } from "../components/headerItems/headerUserImage";
 import { transActionData } from "../lib/data/transActionData";
 import { PriceChip } from "../components/userCard/priceChip";
 import { UserImage } from "../components/userCard/userImage";
 import { friendData } from "../lib/data/friendData";
-import { TransActionTimeAgo } from "../components/userCard/transActionTimeAgo";
+import { TransActionCard } from "../components/transActions/transActionCards";
 
 type UserToUserHistoryRouteProp = RouteProp<
   {
@@ -52,7 +52,6 @@ export const UserToUserHistory: FunctionComponent = () => {
   }, []);
 
   return (
-    // TODO: AGAIN! very strange flex behaviour here, cannot use gap!!
     <ScrollView className={`scroll-pb-64 bg-zinc-950 px-2 pt-2`}>
       {transActionHistory.map((transAction) => {
         const isPos = transAction.amount[0] > 0;
@@ -63,59 +62,27 @@ export const UserToUserHistory: FunctionComponent = () => {
         return (
           <View
             key={transAction.uid}
-            className={`flex flex-row ${isPos && "ml-auto flex-row-reverse"}`}
-          >
-            <View className={isPos ? "ml-2" : "mr-2"}>
-              <UserImage
-                Uri={user.photoUrl}
-                circle={true}
-                height={"h-8"}
-                width={"w-8"}
-              />
-            </View>
-            <View
-              key={transAction.uid}
-              className={`
-              ${
-                isPos
-                  ? "rounded-2xl rounded-tr-none"
-                  : "rounded-2xl rounded-tl-none"
-              }
-               mt-3.5 flex h-fit w-4/6 justify-between border border-zinc-800 bg-zinc-900 p-2
+            className={`
+              flex flex-row space-x-2 ${isPos && "flex-row-reverse"} 
             `}
-            >
-              <View
-                className={`${
-                  isPos ? "flex-row-reverse" : "flex-row"
-                } flex h-min  items-start justify-between`}
-              >
-                <View className={`flex flex-row items-center gap-2`}>
-                  <Text className={`text-xl`}>{transAction.icon}</Text>
-                  <Text className={`text-lg text-zinc-400`}>
-                    {transAction.title}
-                  </Text>
-                </View>
-
-                <View
-                  className={`${
-                    isPos ? "items-start" : "items-end"
-                  } flex flex-col gap-2`}
-                >
-                  <View>
-                    <PriceChip
-                      isPos={isPos}
-                      recentTransaction={transAction.amount[0]}
-                    />
-                  </View>
-                  <View>
-                    <TransActionTimeAgo timeAgo={transAction.timeAgo} />
-                  </View>
-                </View>
-              </View>
-            </View>
+          >
+            <UserImage
+              uri={user.photoUrl}
+              circle={true}
+              height={"h-8"}
+              width={"w-8"}
+            />
+            <TransActionCard
+              icon={transAction.icon}
+              title={transAction.title}
+              isPos={isPos}
+              amount={transAction.amount[0]}
+              timeAgo={transAction.timeAgo}
+            />
           </View>
         );
       })}
+      <View className={`h-12`}></View>
     </ScrollView>
   );
 };

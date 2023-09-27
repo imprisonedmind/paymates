@@ -1,27 +1,29 @@
 import React, { FunctionComponent } from "react";
-import { Text, View, ViewStyle } from "react-native";
+import { View, Text, ViewStyle } from "react-native";
 import { BottomSheetTextInput } from "@gorhom/bottom-sheet";
 
 interface OwnProps {
   style?: ViewStyle;
+  icon: string;
+  handleChange: (v) => void;
 }
 
 type Props = OwnProps;
 
-export const MoneyInputBox: FunctionComponent<Props> = (props) => {
-  const { style } = props;
+export const WhatWasItInputBox: FunctionComponent<Props> = (props) => {
+  const { style, icon, handleChange } = props;
 
   return (
     <View
       style={style}
-      className={`flex overflow-hidden rounded-md border border-zinc-800`}
+      className={`flex w-full overflow-hidden rounded-md border border-zinc-800`}
     >
       <View
         className={` 
             absolute top-0 z-50 flex h-full w-10 items-center justify-center bg-zinc-800
           `}
       >
-        <Text className={`text-lg font-medium`}>R</Text>
+        <Text className={`text-lg font-medium`}>{icon}</Text>
       </View>
       <BottomSheetTextInput
         style={{
@@ -31,13 +33,14 @@ export const MoneyInputBox: FunctionComponent<Props> = (props) => {
           color: "#a1a1aa",
           fontSize: 18,
         }}
-        inputMode={"decimal"}
+        inputMode={"text"}
         returnKeyType={"done"}
         returnKeyLabel={"test"}
-        placeholder={"Enter an amount"}
+        placeholder={"Enter a name"}
         placeholderTextColor={"#27272a"}
+        onChangeText={(v) => handleChange(v)}
         onSubmitEditing={() => {
-          console.log("on submit");
+          console.log("onsubmit");
         }}
       />
     </View>

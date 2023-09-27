@@ -1,22 +1,23 @@
-import { Text, TouchableOpacity } from "react-native";
-import React from "react";
+import { Text, TouchableOpacity, View, ViewStyle } from "react-native";
+import { FunctionComponent } from "react";
 
-interface LongRectangularButton {
+interface OwnProps {
+  style?: ViewStyle;
   title: string;
   callBackFn?: () => void;
   buttonColour?: string;
   textColour?: string;
 }
 
-export const LongRectangularButton: React.FC<LongRectangularButton> = ({
-  title,
-  buttonColour,
-  textColour,
-  callBackFn,
-}) => {
+type Props = OwnProps;
+
+export const LongRectangularButton: FunctionComponent<Props> = (props) => {
+  const { style, title, buttonColour, textColour, callBackFn } = props;
+
   return (
     <TouchableOpacity
       onPress={callBackFn}
+      style={style}
       className={`
 				${buttonColour ?? "border-zinc-700 bg-zinc-800"}
 				flex w-fit rounded-2xl border p-4
