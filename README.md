@@ -15,6 +15,7 @@ engaging features will transform the way you manage shared expenses.
 - [X] Tailwind Classes Prettier Sorting
 - [ ] Auth
 - [ ] Change touchable to press-ables with animation
+- [ ] Add a friend
 - [ ] *Auth Screen*
     - [ ] Header Image
     - [ ] Google Sign in

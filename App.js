@@ -13,6 +13,7 @@ import { UserToUserHistory } from "./pages/userToUserHistory";
 import { Details } from "./pages/details";
 import { Currency } from "./pages/currency";
 import { Accounts } from "./pages/accounts";
+import { YourQrCode } from "./pages/yourQrCode";
 
 const Stack = createNativeStackNavigator();
 
@@ -64,6 +65,7 @@ const App = () => {
               <Stack.Screen name="Details" component={Details} />
               <Stack.Screen name="Currency" component={Currency} />
               <Stack.Screen name="Accounts" component={Accounts} />
+              <Stack.Screen name="QrCode" component={YourQrCode} />
             </Stack.Navigator>
           </NavigationContainer>
         </BottomSheetModalProvider>

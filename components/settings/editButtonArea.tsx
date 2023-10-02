@@ -2,6 +2,7 @@ import React, { FunctionComponent } from "react";
 import { EditYourDetails } from "./editYourDetails";
 import { View, ViewStyle } from "react-native";
 import {
+  AntDesign,
   FontAwesome,
   FontAwesome5,
   MaterialCommunityIcons,
@@ -57,6 +58,16 @@ export const EditButtonArea: FunctionComponent<Props> = (props) => {
             navigation.navigate("Accounts", { backTitle: "Settings" })
           }
         />
+        <EditYourDetails
+          icon={qr}
+          iconBgColor={"bg-lime-600"}
+          title={"Your Qr Code"}
+          description={"Edit your accounts or add a new one."}
+          callBackFn={() =>
+            // @ts-ignore
+            navigation.navigate("QrCode", { backTitle: "Settings" })
+          }
+        />
       </View>
     </View>
   );
@@ -81,3 +92,5 @@ const card = (
 const currency = (
   <FontAwesome5 name={"dollar-sign"} size={24} style={{ color: "#f4f4f5" }} />
 );
+
+const qr = <AntDesign name={"qrcode"} size={24} style={{ color: "#f4f4f5" }} />;
