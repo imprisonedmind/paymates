@@ -37,6 +37,7 @@ export const Accounts: FunctionComponent = () => {
         {accs.map((acc) => {
           return (
             <UserBankInformation
+              key={acc.accountNumber}
               uri={acc.logo}
               bank={acc.bank}
               branchCode={acc.branchCode}
