@@ -1,4 +1,5 @@
-import { SafeAreaView, ScrollView, View } from "react-native";
+import { ScrollView, View } from "react-native";
+import SafeAreaView from 'react-native-safe-area-view';
 import React, { useRef, useState } from "react";
 import { UserCard } from "../components/userCard/userCard";
 import { friendData } from "../lib/data/friendData";
