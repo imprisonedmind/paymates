@@ -1,4 +1,5 @@
-import { SafeAreaView, Text, View } from "react-native";
+import { Text, View } from "react-native";
+import SafeAreaView from "react-native-safe-area-view";
 import { LongRectangularButton } from "../components/buttons/longRectangularButton";
 
 export default function OnboardingPage({ navigation }) {

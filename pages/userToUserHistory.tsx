@@ -1,5 +1,6 @@
 import React, { FunctionComponent, useEffect } from "react";
-import { SafeAreaView, ScrollView, View } from "react-native";
+import { ScrollView, View } from "react-native";
+import SafeAreaView from "react-native-safe-area-view";
 import { RouteProp, useNavigation, useRoute } from "@react-navigation/native";
 import { HeaderUserImage } from "../components/headerItems/headerUserImage";
 import { transActionData } from "../lib/data/transActionData";
