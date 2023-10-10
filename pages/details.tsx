@@ -2,9 +2,9 @@ import { FunctionComponent, useEffect, useState } from "react";
 import { View } from "react-native";
 import { RouteProp, useNavigation, useRoute } from "@react-navigation/native";
 import { friendData } from "../lib/data/friendData";
-import { CustomTextInput } from "../components/input/textInput";
 import { UserImage } from "../components/userCard/userImage";
 import { LongRectangularButton } from "../components/buttons/longRectangularButton";
+import { CustomTextInput } from "../components/input/textInput";
 
 type DetailsProps = RouteProp<
   {
@@ -34,25 +34,27 @@ export const Details: FunctionComponent = () => {
   }, []);
 
   return (
-    <View className={`flex h-full flex-col space-y-4 bg-zinc-950 p-2 pt-4`}>
-      <View className={`mx-auto`}>
-        <UserImage
-          uri={details.photoUrl}
-          height={"h-24"}
-          width={"w-24"}
-          circle={true}
+    <View className={`flex h-full flex-col space-y-8 bg-zinc-950 p-2 pt-8`}>
+      <View className={`space-y-4`}>
+        <View className={`mx-auto`}>
+          <UserImage
+            uri={details.photoUrl}
+            height={"h-24"}
+            width={"w-24"}
+            circle={true}
+          />
+        </View>
+        <CustomTextInput
+          title={"Your Name"}
+          value={name}
+          callback={(v) => setName(v)}
+        />
+        <CustomTextInput
+          title={"Your Email"}
+          value={email}
+          callback={(v) => setEmail(v)}
         />
       </View>
-      <CustomTextInput
-        title={"Your Name"}
-        value={name}
-        callback={(v) => setName(v)}
-      />
-      <CustomTextInput
-        title={"Your Email"}
-        value={email}
-        callback={(v) => setEmail(v)}
-      />
       <LongRectangularButton
         title={"Save"}
         buttonColour={"bg-blue-600"}

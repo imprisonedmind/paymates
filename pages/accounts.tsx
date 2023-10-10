@@ -38,6 +38,7 @@ export const Accounts: FunctionComponent = () => {
           return (
             <UserBankInformation
               key={acc.accountNumber}
+              width={"w-full"}
               uri={acc.logo}
               bank={acc.bank}
               branchCode={acc.branchCode}
