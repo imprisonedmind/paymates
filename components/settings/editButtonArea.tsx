@@ -62,7 +62,7 @@ export const EditButtonArea: FunctionComponent<Props> = (props) => {
           icon={qr}
           iconBgColor={"bg-lime-600"}
           title={"Your Qr Code"}
-          description={"Edit your accounts or add a new one."}
+          description={"View or share your qr code."}
           callBackFn={() =>
             // @ts-ignore
             navigation.navigate("QrCode", { backTitle: "Settings" })
