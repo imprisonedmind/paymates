@@ -4,6 +4,7 @@ import { cardColorData } from "../../lib/data/cardColorData";
 
 interface OwnProps {
   style?: ViewStyle;
+  width?: string;
   uri: string;
   bank: string;
   branchCode: string;
@@ -14,7 +15,8 @@ interface OwnProps {
 type Props = OwnProps;
 
 export const UserBankInformation: FunctionComponent<Props> = (props) => {
-  const { style, uri, bank, branchCode, accountName, accountNumber } = props;
+  const { style, width, uri, bank, branchCode, accountName, accountNumber } =
+    props;
 
   const color = cardColorData.find(
     (colorData) => colorData.bank === bank.toLowerCase().replace(" ", ""),
@@ -31,7 +33,8 @@ export const UserBankInformation: FunctionComponent<Props> = (props) => {
         },
       ]}
       className={`
-        flex w-[250] space-y-4 rounded-2xl border p-4
+      ${width ?? "w-[250]"}
+        flex space-y-4 rounded-2xl border p-4
       `}
     >
       <View className={`flex flex-row items-center justify-between`}>
