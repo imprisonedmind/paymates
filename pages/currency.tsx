@@ -59,6 +59,7 @@ export const Currency: FunctionComponent = () => {
         {currencyData.map((currency) => {
           return (
             <TouchableOpacity
+              key={currency.code}
               activeOpacity={0.8}
               onPress={() => setCurrentCurrency(currency)}
             >
