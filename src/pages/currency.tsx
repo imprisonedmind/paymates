@@ -1,9 +1,12 @@
 import { FunctionComponent, useEffect, useState } from "react";
+
 import { ScrollView, Text, TouchableOpacity, View } from "react-native";
+
 import { RouteProp, useNavigation, useRoute } from "@react-navigation/native";
-import { friendData } from "../lib/data/friendData";
-import { commonCurrency } from "../lib/data/commonCurrency";
+
 import { CurrencyFlag } from "../components/currency/currencyFlag";
+import { commonCurrency } from "../data/commonCurrency";
+import { friendData } from "../data/friendData";
 
 type CurrencyProps = RouteProp<
   {

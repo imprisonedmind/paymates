@@ -6,12 +6,14 @@ import React, {
   useRef,
   useState,
 } from "react";
+
 import {
   BottomSheetBackdrop,
   BottomSheetModal,
   BottomSheetView,
 } from "@gorhom/bottom-sheet";
-import { useBottomSheetContext } from "../../lib/context/bottomSheetContext";
+
+import { useBottomSheetContext } from "../../context/bottomSheetContext";
 
 const BottomSheet: FunctionComponent = () => {
   const { isOpen, setIsOpen, bottomSheetChildren } = useBottomSheetContext();

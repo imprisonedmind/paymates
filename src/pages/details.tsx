@@ -1,10 +1,13 @@
 import { FunctionComponent, useEffect, useState } from "react";
+
 import { View } from "react-native";
+
 import { RouteProp, useNavigation, useRoute } from "@react-navigation/native";
-import { friendData } from "../lib/data/friendData";
-import { UserImage } from "../components/userCard/userImage";
+
 import { LongRectangularButton } from "../components/buttons/longRectangularButton";
 import { CustomTextInput } from "../components/input/textInput";
+import { UserImage } from "../components/userCard/userImage";
+import { friendData } from "../data/friendData";
 
 type DetailsProps = RouteProp<
   {

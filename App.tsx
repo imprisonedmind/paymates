@@ -1,19 +1,22 @@
 import "react-native-gesture-handler";
-import OnboardingPage from "./pages/onboarding";
+
+import { StatusBar } from "expo-status-bar";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
+
+import { BottomSheetModalProvider } from "@gorhom/bottom-sheet";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { HomePage, LandingPage } from "./pages/landing";
-import { SettingsPage } from "./pages/settings";
-import { GestureHandlerRootView } from "react-native-gesture-handler";
-import { BottomSheetModalProvider } from "@gorhom/bottom-sheet";
-import BottomSheet from "./components/bottomSheet/bottomSheet";
-import { BottomSheetContextProvider } from "./lib/context/bottomSheetContext";
-import { StatusBar } from "expo-status-bar";
-import { UserToUserHistory } from "./pages/userToUserHistory";
-import { Details } from "./pages/details";
-import { Currency } from "./pages/currency";
-import { Accounts } from "./pages/accounts";
-import { YourQrCode } from "./pages/yourQrCode";
+
+import BottomSheet from "./src/components/bottomSheet/bottomSheet";
+import { BottomSheetContextProvider } from "./src/context/bottomSheetContext";
+import { Accounts } from "./src/pages/accounts";
+import { Currency } from "./src/pages/currency";
+import { Details } from "./src/pages/details";
+import { LandingPage } from "./src/pages/landing";
+import OnboardingPage from "./src/pages/onboarding";
+import { SettingsPage } from "./src/pages/settings";
+import { UserToUserHistory } from "./src/pages/userToUserHistory";
+import { YourQrCode } from "./src/pages/yourQrCode";
 
 const Stack = createNativeStackNavigator();
 

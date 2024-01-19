@@ -1,8 +1,11 @@
 import { FunctionComponent, useEffect } from "react";
+
 import { ScrollView, View } from "react-native";
+
 import { RouteProp, useNavigation, useRoute } from "@react-navigation/native";
-import { accountData } from "../lib/data/accountData";
+
 import { UserBankInformation } from "../components/userInformation/userBankInformation";
+import { accountData } from "../data/accountData";
 
 type AccountsProps = RouteProp<
   {

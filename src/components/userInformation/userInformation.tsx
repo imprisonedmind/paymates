@@ -1,8 +1,10 @@
 import React, { FunctionComponent } from "react";
+
 import { ScrollView, Text, View } from "react-native";
+
+import { accountData } from "../../data/accountData";
 import { UserImage } from "../userCard/userImage";
 import { UserBankInformation } from "./userBankInformation";
-import { accountData } from "../../lib/data/accountData";
 
 interface OwnProps {
   user: {

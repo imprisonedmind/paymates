@@ -1,6 +1,8 @@
 import { FunctionComponent } from "react";
+
 import { Alert, Share, View, ViewStyle } from "react-native";
 import QRCode from "react-qr-code";
+
 import { LongRectangularButton } from "../components/buttons/longRectangularButton";
 
 interface OwnProps {

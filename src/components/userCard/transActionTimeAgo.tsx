@@ -1,6 +1,8 @@
 import React, { FunctionComponent } from "react";
+
 import { Text, ViewStyle } from "react-native";
-import { timeAgo } from "../../lib/utilities";
+
+import { timeAgo } from "../../utilities";
 
 interface OwnProps {
   style?: ViewStyle;

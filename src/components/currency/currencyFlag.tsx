@@ -1,6 +1,8 @@
 import React, { FunctionComponent } from "react";
+
 import { Image, View, ViewStyle } from "react-native";
-import { currencyFlagData } from "../../lib/data/currencyFlag";
+
+import { currencyFlagData } from "../../data/currencyFlag";
 
 interface OwnProps {
   style?: ViewStyle;

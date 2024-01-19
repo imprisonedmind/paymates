@@ -1,6 +1,8 @@
 import React, { FunctionComponent } from "react";
+
 import { Image, Text, View, ViewStyle } from "react-native";
-import { cardColorData } from "../../lib/data/cardColorData";
+
+import { cardColorData } from "../../data/cardColorData";
 
 interface OwnProps {
   style?: ViewStyle;

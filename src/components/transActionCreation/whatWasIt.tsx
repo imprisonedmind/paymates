@@ -1,7 +1,9 @@
 import React, { FunctionComponent, useState } from "react";
-import { AreaTitle } from "./areaTitle";
+
 import { View, ViewStyle } from "react-native";
-import { iconData } from "../../lib/data/iconData";
+
+import { iconData } from "../../data/iconData";
+import { AreaTitle } from "./areaTitle";
 import { WhatWasItInputBox } from "./whatWasItInputBox";
 
 interface OwnProps {

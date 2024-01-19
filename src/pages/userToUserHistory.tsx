@@ -1,13 +1,15 @@
 import React, { FunctionComponent, useEffect } from "react";
+
 import { ScrollView, View } from "react-native";
-import SafeAreaView from "react-native-safe-area-view";
+
 import { RouteProp, useNavigation, useRoute } from "@react-navigation/native";
+
 import { HeaderUserImage } from "../components/headerItems/headerUserImage";
-import { transActionData } from "../lib/data/transActionData";
+import { TransActionCard } from "../components/transActions/transActionCards";
 import { PriceChip } from "../components/userCard/priceChip";
 import { UserImage } from "../components/userCard/userImage";
-import { friendData } from "../lib/data/friendData";
-import { TransActionCard } from "../components/transActions/transActionCards";
+import { friendData } from "../data/friendData";
+import { transActionData } from "../data/transActionData";
 
 type UserToUserHistoryRouteProp = RouteProp<
   {

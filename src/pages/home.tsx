@@ -1,11 +1,14 @@
-import { ScrollView, View } from "react-native";
-import SafeAreaView from 'react-native-safe-area-view';
 import React, { useRef, useState } from "react";
-import { UserCard } from "../components/userCard/userCard";
-import { friendData } from "../lib/data/friendData";
-import { transActionData } from "../lib/data/transActionData";
+
+import { ScrollView, View } from "react-native";
+import SafeAreaView from "react-native-safe-area-view";
+
 import { useNavigation } from "@react-navigation/native";
+
 import FabAddTransAction from "../components/buttons/fabAddTransAction";
+import { UserCard } from "../components/userCard/userCard";
+import { friendData } from "../data/friendData";
+import { transActionData } from "../data/transActionData";
 
 export const HomePage: React.FunctionComponent = () => {
   const navigation = useNavigation<any>();

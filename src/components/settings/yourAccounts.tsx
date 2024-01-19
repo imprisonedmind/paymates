@@ -1,8 +1,11 @@
 import React, { FunctionComponent } from "react";
+
 import { ScrollView, Text, View } from "react-native";
-import { UserBankInformation } from "../userInformation/userBankInformation";
+
 import { MaterialCommunityIcons, Octicons } from "@expo/vector-icons";
-import { accountData } from "../../lib/data/accountData";
+
+import { accountData } from "../../data/accountData";
+import { UserBankInformation } from "../userInformation/userBankInformation";
 
 interface OwnProps {}
 

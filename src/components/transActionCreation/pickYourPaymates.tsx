@@ -1,4 +1,5 @@
 import React, { FunctionComponent } from "react";
+
 import {
   ScrollView,
   Text,
@@ -6,9 +7,10 @@ import {
   View,
   ViewStyle,
 } from "react-native";
+
+import { friendData } from "../../data/friendData";
 import { UserImage } from "../userCard/userImage";
 import { AreaTitle } from "./areaTitle";
-import { friendData } from "../../lib/data/friendData";
 
 interface OwnProps {
   style?: ViewStyle;

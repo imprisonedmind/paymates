@@ -1,8 +1,10 @@
-import { View } from "react-native";
 import { FunctionComponent } from "react";
-import { friendData } from "../lib/data/friendData";
-import { UserDetailArea } from "../components/settings/userDetailArea";
+
+import { View } from "react-native";
+
 import { EditButtonArea } from "../components/settings/editButtonArea";
+import { UserDetailArea } from "../components/settings/userDetailArea";
+import { friendData } from "../data/friendData";
 
 export const SettingsPage: FunctionComponent<{}> = () => {
   const user = friendData.find(

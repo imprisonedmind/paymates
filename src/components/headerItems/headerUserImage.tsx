@@ -1,8 +1,10 @@
 import React, { FunctionComponent } from "react";
-import { friendData } from "../../lib/data/friendData";
+
 import { TouchableOpacity } from "react-native";
+
+import { useBottomSheetContext } from "../../context/bottomSheetContext";
+import { friendData } from "../../data/friendData";
 import { UserImage } from "../userCard/userImage";
-import { useBottomSheetContext } from "../../lib/context/bottomSheetContext";
 import { UserInformation } from "../userInformation/userInformation";
 
 interface OwnProps {

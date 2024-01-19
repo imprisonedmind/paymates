@@ -1,12 +1,14 @@
-import TransActionCreation from "../transActionCreation/transActionCreation";
-import { Ionicons } from "@expo/vector-icons";
 import { TouchableOpacity, View } from "react-native";
-import { useBottomSheetContext } from "../../lib/context/bottomSheetContext";
 import Animated, {
   useAnimatedStyle,
   useSharedValue,
   withSpring,
 } from "react-native-reanimated";
+
+import { Ionicons } from "@expo/vector-icons";
+
+import { useBottomSheetContext } from "../../context/bottomSheetContext";
+import TransActionCreation from "../transActionCreation/transActionCreation";
 
 export interface OwnProps {
   show: boolean;
